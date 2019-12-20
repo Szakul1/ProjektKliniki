@@ -9,11 +9,6 @@ public class mainFrame extends JFrame
     private static final long serialVersionUID = 1L;
 
     JTabbedPane cards;
-    //JButton admin;
-    //JButton employees;
-    //JButton services;
-    //JButton clients;
-    //JButton visits;
     JButton myDataJButton;
     private static final String admin = "admin";
     private static final String employees = "pracownicy";
@@ -21,33 +16,48 @@ public class mainFrame extends JFrame
     private static final String clients = "klienci";
     private static final String animals = "zwierzęta";
     private static final String visits = "wizyty";
+    private static final String grafic = "grafik";
+    private static final String vaccinations = "szczepienia";
     private static final String myData = "i";
-    //String[] items;
-    public mainFrame()
+
+    public mainFrame(String permissions)
     {
         myDataJButton = new JButton(myData);
         cards = new JTabbedPane();
-        //items = new String[]{admin, employees, services, clients, visits, myData};
-        cards.addTab(admin, null);
-        cards.addTab(employees,null);
-        cards.addTab(services, null);
-        cards.addTab(clients, new clientPanel(this));
-        cards.addTab(visits, null);
-        cards.addTab(animals, null);
-        cards.add(myDataJButton);
-        //cards.setTabLayoutPolicy(JTabbedPane.);
+        addCards(permissions);
 
         setLayout(new BorderLayout());
         add(cards, BorderLayout.NORTH);
-        //setResizable(false);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    public static void main(String[] args)
+    private void addCards(String permissions)
     {
-        new mainFrame();
+        switch (permissions) {
+            case "admin":
+            cards.addTab(admin, null);
+                
+            case "dyrektor":
+                cards.addTab(employees,null);
+
+            case "wterynarz":
+                cards.addTab(clients, new clientPanel(this));
+                
+            case "technik":
+                cards.addTab(vaccinations, new clientPanel(this));
+
+            case "klient":
+                cards.addTab(services, null);
+                cards.addTab(visits, null);
+                cards.addTab(animals, null);
+                cards.addTab(grafic, null);
+                cards.add(myDataJButton);
+
+            default:
+                break;
+        }
     }
 }
