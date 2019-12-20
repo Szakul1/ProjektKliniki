@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class myPanel extends JPanel implements ActionListener
+public class myPanel extends JPanel implements ActionListener
 {
 
     /**
