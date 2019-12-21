@@ -1,3 +1,4 @@
+package app;
 
 import java.awt.Container;
 import java.awt.Font;
@@ -86,7 +87,7 @@ public class AddPet extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imiê"); 
+        name = new JLabel("Imiï¿½"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
@@ -122,7 +123,7 @@ public class AddPet extends JFrame implements ActionListener{
         tmno.setLocation(200, 200); 
         c.add(tmno); 
   
-        gender = new JLabel("P³eæ"); 
+        gender = new JLabel("PÅ‚eÄ‡"); 
         gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
         gender.setSize(100, 20); 
         gender.setLocation(100, 250); 
@@ -183,7 +184,7 @@ public class AddPet extends JFrame implements ActionListener{
         sub.addActionListener(this); 
         c.add(sub); 
   
-        reset = new JButton("Wyczyœæ"); 
+        reset = new JButton("WyczyÅ›Ä‡"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(270, 400); 

@@ -1,3 +1,5 @@
+package app;
+
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -84,7 +86,7 @@ public class AddClient extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imiê"); 
+        name = new JLabel("Imiï¿½"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
@@ -121,13 +123,13 @@ public class AddClient extends JFrame implements ActionListener{
         tmno.setLocation(200, 200); 
         c.add(tmno); 
   
-        gender = new JLabel("P³eæ"); 
+        gender = new JLabel("Pï¿½eï¿½"); 
         gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
         gender.setSize(100, 20); 
         gender.setLocation(100, 250); 
         c.add(gender); 
   
-        male = new JRadioButton("Mê¿czyzna"); 
+        male = new JRadioButton("Mï¿½czyzna"); 
         male.setFont(new Font("Arial", Font.PLAIN, 15)); 
         male.setSelected(true); 
         male.setSize(75, 20); 
@@ -190,7 +192,7 @@ public class AddClient extends JFrame implements ActionListener{
         sub.addActionListener(this); 
         c.add(sub); 
   
-        reset = new JButton("Wyczyœæ"); 
+        reset = new JButton("Wyczyï¿½ï¿½"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(270, 450); 

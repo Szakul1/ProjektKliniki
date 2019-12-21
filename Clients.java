@@ -1,3 +1,6 @@
+package app;
+
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,13 +19,13 @@ public class Clients extends JPanel implements ActionListener{
 	Clients(){
 		setLayout(new FlowLayout(FlowLayout.CENTER,30,30));
 		add = new JButton("Dodaj");
-		del = new JButton("Usuñ");
+		del = new JButton("UsuÅ„");
 	}
 	
 	Clients(String[] lista){
 		setLayout(new FlowLayout(FlowLayout.CENTER,30,30));
 		add = new JButton("Dodaj");
-		del = new JButton("Usuñ");
+		del = new JButton("UsuÅ„");
 	}
 
 	@Override

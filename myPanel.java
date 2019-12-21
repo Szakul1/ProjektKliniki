@@ -1,3 +1,5 @@
+package app;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -19,6 +21,7 @@ public class myPanel extends JPanel implements ActionListener
     List<JComboBox<String>> columns;
     List<JTextField> condition;
     List<JButton> remove;
+    JButton select;
     JFrame frame;
     public myPanel(String[] names, JFrame frame)
     {
@@ -30,13 +33,15 @@ public class myPanel extends JPanel implements ActionListener
         remove = new ArrayList<>();
         chooseColumn = new JLabel("Kolumna                       ");
         writeCondition = new JLabel("Warunek");
-        
+        select = new JButton("Wyszukaj");
+        select.addActionListener(this);
         
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         help.add(new JPanel());
         help.get(0).setLayout(new FlowLayout(FlowLayout.LEFT));
         help.get(0).add(chooseColumn);
         help.get(0).add(writeCondition);
+        help.get(0).add(select);
         add(help.get(0));
         addCondition();
     }
@@ -59,12 +64,7 @@ public class myPanel extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if(!e.getActionCommand().equals("X"))
-        {
-            addCondition();
-            frame.pack();
-        }
-        else
+        if(e.getActionCommand().equals("X"))
         {
             for(int i=0; i<remove.size() && remove.size()>1; i++)
             {
@@ -78,6 +78,24 @@ public class myPanel extends JPanel implements ActionListener
                     frame.pack();
                 }
             }
+        }
+        else if(e.getActionCommand().equals("Wyszukaj"))
+        {
+            List<String> information = new ArrayList<>();
+            for(int i=0; i<remove.size(); i++)
+            {
+                if(!condition.get(i).getText().isEmpty())
+                {
+                    information.add(columns.get(i).getSelectedItem().toString());
+                    information.add(condition.get(i).getText());
+                }
+            }
+            new DataBaseConnection(information.toArray(new String[0]),names);
+        }
+        else
+        {
+            addCondition();
+            frame.pack();
         }
     }
 

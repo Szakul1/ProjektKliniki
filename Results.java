@@ -1,3 +1,5 @@
+package app;
+
 import javax.swing.*;
 
 
@@ -10,14 +12,14 @@ public class Results extends JFrame
     private static final long serialVersionUID = 1L;
     JPanel results;
     JScrollPane scroll;
-    public Results()
+    public Results(String[] table)
     {
         scroll = new JScrollPane();
         results = new JPanel();
         results.setLayout(new BoxLayout(results, BoxLayout.Y_AXIS));
         
-        for(int i=0; i<50; i++)
-            results.add(new JLabel("siema: "+i));
+        for(int i=0; i<table.length; i++)
+            results.add(new JLabel(table[i]));
         
         scroll.setViewportView(results);
         add(scroll);
@@ -32,7 +34,7 @@ public class Results extends JFrame
     
     public static void main(String[] args)
     {
-        new Results();
+        //new Results();
     }
 
 }
