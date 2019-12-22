@@ -22,9 +22,11 @@ public class myPanel extends JPanel implements ActionListener
     List<JTextField> condition;
     List<JButton> remove;
     JButton select;
-    JFrame frame;
-    public myPanel(String[] names, JFrame frame)
+    mainFrame frame;
+    String table;
+    public myPanel(String table, String[] names, mainFrame frame)
     {
+        this.table=table;
         this.names = names;
         this.frame= frame;
         help = new ArrayList<>();
@@ -90,7 +92,7 @@ public class myPanel extends JPanel implements ActionListener
                     information.add(condition.get(i).getText());
                 }
             }
-            new DataBaseConnection(information.toArray(new String[0]),names);
+            frame.getDataBase().select(table,information.toArray(new String[0]),names);
         }
         else
         {

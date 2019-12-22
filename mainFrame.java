@@ -21,9 +21,11 @@ public class mainFrame extends JFrame
     private static final String grafic = "grafik";
     private static final String vaccinations = "szczepienia";
     private static final String myData = "i";
+    DataBaseConnection dataBase;
 
     public mainFrame(String permissions)
     {
+        dataBase = new DataBaseConnection(this);
         myDataJButton = new JButton(myData);
         cards = new JTabbedPane();
         addCards(permissions);
@@ -34,6 +36,11 @@ public class mainFrame extends JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    public DataBaseConnection getDataBase()
+    {
+        return dataBase;
     }
 
     private void addCards(String permissions)
@@ -49,7 +56,7 @@ public class mainFrame extends JFrame
                 cards.addTab(clients, new clientPanel(this));
                 
             case "technik":
-                cards.addTab(vaccinations, new clientPanel(this));
+                cards.addTab(vaccinations, null);
 
             case "klient":
                 cards.addTab(services, null);
