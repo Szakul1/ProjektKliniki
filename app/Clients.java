@@ -32,7 +32,7 @@ public class Clients extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==add) {
-			new AddClient();
+			//new AddClient();
 		}
 		else if(e.getSource()==del) {
 			

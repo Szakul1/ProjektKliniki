@@ -72,6 +72,21 @@ public class DataBaseConnection {
             return -1;
         }
     }
+    
+    public int insert(String table, String[] values) {
+    	try
+        {
+            String deletequery = "Insert INTO " + table + " VALUES " + parseValues(values);
+            System.out.println(deletequery);
+            int res = stmt.executeUpdate(deletequery);
+            return res;
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+            return -1;
+        }
+    }
 
     private String parseConditions(String[] information)
     {
@@ -87,6 +102,17 @@ public class DataBaseConnection {
                 result+=" AND ";
         }
         return result;
+    }
+    
+    private String parseValues(String[] values) {
+    	String sresult = "(";
+    	for(String i:values) {
+    		sresult += "'"+ i + "',";
+    	}
+    	String result = sresult.substring(0, sresult.length()-1);
+    	result += ")";
+    	
+    	return result;
     }
     public static void main(String[] args) {
         //new DataBaseConnection();

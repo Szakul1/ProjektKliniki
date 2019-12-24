@@ -4,23 +4,20 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 
 public class AddPet extends JFrame implements ActionListener{
+	private mainFrame frame;
 	private Container c; 
     private JLabel title; 
     private JLabel name; 
     private JTextField tname; 
-    private JLabel surname; 
-    private JTextField tsurname;
-    private JLabel mno; 
-    private JTextField tmno; 
+    private JLabel species; 
+    private JTextField tspecies;
+    private JLabel weight; 
+    private JTextField tweight; 
     private JLabel gender; 
     private JRadioButton male; 
     private JRadioButton female; 
@@ -29,6 +26,12 @@ public class AddPet extends JFrame implements ActionListener{
     private JComboBox date; 
     private JComboBox month; 
     private JComboBox year;
+    private JLabel tpet;
+    private JComboBox pettype;
+    private JLabel des;
+    private JLabel coun;
+    private JTextField destiny;
+    private JTextField country;
     private JCheckBox checkBox;
     private JLabel add; 
     private JTextArea tadd; 
@@ -37,7 +40,8 @@ public class AddPet extends JFrame implements ActionListener{
     private JButton reset; 
     private JTextArea tout; 
     private JLabel res; 
-    private JTextArea resadd; 
+    private JTextArea resadd;
+    private String whattype;
   
     private String dates[] 
         = { "1", "2", "3", "4", "5", 
@@ -68,11 +72,44 @@ public class AddPet extends JFrame implements ActionListener{
            "1992", "1993", "1994", "1995",
            "1996", "1997", "1998", "1999",
            "2000", "2001", "2002"}; 
-  
+    
+    private String types[]
+    	= {"hodowlane","domowe","egzotyczne"};
+    
+    
+    public void adds(String s) {
+    	switch(s) {
+    		case "hodowlane":
+    			whattype = "h";
+    			destiny = new JTextField();
+    			destiny.setFont(new Font("Arial", Font.PLAIN, 15)); 
+    			destiny.setSize(100, 20); 
+    			destiny.setLocation(300, 350); 
+    	        c.add(destiny); 
+    			break;
+    		case "domowe":
+    			whattype = "d";
+    			checkBox = new JCheckBox("Kastrowane"); 
+    		    checkBox.setFont(new Font("Arial", Font.PLAIN, 20)); 
+    		    checkBox.setSize(70,20); 
+    		    checkBox.setLocation(300, 350); 
+    		    c.add(checkBox); 
+    			break;
+    		case "egzotyczne":
+    			whattype = "e";
+    			country = new JTextField();
+    			country.setFont(new Font("Arial", Font.PLAIN, 15)); 
+    			country.setSize(100, 20); 
+    			country.setLocation(300, 350); 
+    			c.add(country);
+    			break;
+    	}
+    }
     // constructor, to initialize the components 
     // with default values. 
-    public AddPet() 
-    { 
+    public AddPet(mainFrame frame) 
+    {
+    	this.frame = frame;
         setTitle("Formularz rejestracji"); 
         setBounds(300, 90, 900, 600); 
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
@@ -99,29 +136,29 @@ public class AddPet extends JFrame implements ActionListener{
         tname.setLocation(200, 100); 
         c.add(tname); 
         
-        surname = new JLabel("Gatunek"); 
-        surname.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        surname.setSize(100, 20); 
-        surname.setLocation(100, 150); 
-        c.add(surname); 
+        species = new JLabel("Gatunek"); 
+        species.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        species.setSize(100, 20); 
+        species.setLocation(100, 150); 
+        c.add(species); 
   
-        tsurname = new JTextField(); 
-        tsurname.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tsurname.setSize(100, 20); 
-        tsurname.setLocation(200, 150); 
-        c.add(tsurname); 
+        tspecies = new JTextField(); 
+        tspecies.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tspecies.setSize(100, 20); 
+        tspecies.setLocation(200, 150); 
+        c.add(tspecies); 
   
-        mno = new JLabel("Waga"); 
-        mno.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        mno.setSize(100, 20); 
-        mno.setLocation(100, 200); 
-        c.add(mno); 
+        weight = new JLabel("Waga"); 
+        weight.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        weight.setSize(100, 20); 
+        weight.setLocation(100, 200); 
+        c.add(weight); 
   
-        tmno = new JTextField();
-        tmno.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tmno.setSize(50, 20); 
-        tmno.setLocation(200, 200); 
-        c.add(tmno); 
+        tweight = new JTextField();
+        tweight.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tweight.setSize(50, 20); 
+        tweight.setLocation(200, 200); 
+        c.add(tweight); 
   
         gender = new JLabel("Płeć"); 
         gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
@@ -170,12 +207,25 @@ public class AddPet extends JFrame implements ActionListener{
         year.setSize(60, 20); 
         year.setLocation(320, 300); 
         c.add(year); 
+        
+        tpet = new JLabel("typ");
+        tpet.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tpet.setSize(40,20);
+        tpet.setLocation(100,350);
+        c.add(tpet);
+       
+        pettype = new JComboBox(types);
+        pettype.setSelectedIndex(0);
+        pettype.setFont(new Font("Arial", Font.PLAIN, 15));
+        pettype.setSize(80,20);
+        pettype.setLocation(200,350);
+        pettype.addActionListener(this);
+        c.add(pettype);
+        
+        /*
+       
+		*/
   
-        checkBox = new JCheckBox("Kastrowane"); 
-        checkBox.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        checkBox.setSize(150, 20); 
-        checkBox.setLocation(100, 350); 
-        c.add(checkBox); 
   
         sub = new JButton("Dodaj"); 
         sub.setFont(new Font("Arial", Font.PLAIN, 15)); 
@@ -203,10 +253,99 @@ public class AddPet extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		boolean puste = false;
+		if(e.getSource()==pettype) {
+			String s = (String) pettype.getSelectedItem();
+			adds(s);
+		}
+		else if(e.getSource()==add) {
+			String name = tname.getText();
+			if(name.equals("")) {
+				puste = true;
+			}
+			String species = tspecies.getText();
+			if(species.equals("")) {
+				puste = true;
+			}
+			String weight = tweight.getText();
+			if(weight.equals("")) {
+				puste = true;
+			}
+			String sex;
+			if(male.isSelected()) {
+				sex = "m";
+			}
+			else if(female.isSelected()) {
+				sex = "f";
+			}
+			else {
+				sex = "";
+			}
+			if(sex.equals("")) {
+				puste = true;
+			}
+			String sday = date.getSelectedItem().toString();
+			if(sday.equals("")) {
+				puste = true;
+			}
+			String smonth = month.getSelectedItem().toString();
+			if(smonth.equals("")) {
+				puste = true;
+			}
+			String syear = year.getSelectedItem().toString();
+			if(syear.equals("")) {
+				puste = true;
+			}
+			
+			String typo = "";
+			
+			switch(whattype) {
+				case "h":
+					typo = destiny.getText();
+					if(typo.equals("")) {
+						puste = true;
+					}
+					break;
+				case "d":
+					if(checkBox.isSelected()) {
+						typo = "True";
+					}
+					else {
+						typo = "False";
+					}
+					break;
+				case "e":
+					typo = country.getText();
+					if(typo.equals("")) {
+						puste = true;
+					}
+					break;
+			}
+			//jaki format to ma miec
+			if(puste==true) {
+				puste = false;
+				JOptionPane.showMessageDialog(this, "Wypelnij wszystkie pola");
+			}
+			else {
+				String birthday = sday + smonth + syear;
+				ArrayList<String> values = new ArrayList();
+				values.add(name);
+				values.add(species);
+				values.add(weight);
+				values.add(sex);
+				values.add(birthday);
+				values.add(typo);
+				
+				
+				String[] wyniki = (String[]) values.toArray();
+				
+				frame.getDataBase().insert("zwierzeta",wyniki);
+			}
+		}
 		
 	}
 	
 	public static void main(String[] args) {
-		new AddPet();
+		//new AddPet();
 	}
 }

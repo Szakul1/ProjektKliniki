@@ -4,15 +4,16 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-
-public class AddClient extends JFrame implements ActionListener{
+/*
+ * trzeba dodac do wszystkicj jcheckboxow
+ * pusty string jako pierwszy wybor
+ * bo inaczej wszystkie if'y na puste nie dzialaja
+ */
+public class AddWorker extends JFrame implements ActionListener{
+	private mainFrame frame;
 	private Container c; 
     private JLabel title; 
     private JLabel name; 
@@ -28,7 +29,12 @@ public class AddClient extends JFrame implements ActionListener{
     private JLabel dob; 
     private JComboBox date; 
     private JComboBox month; 
-    private JComboBox year; 
+    private JComboBox year;
+    private JLabel salary;
+    private JTextField tsalary;
+    private JLabel occupation;
+    private String[] jobs;
+    private JComboBox coccupation;
     private JLabel add; 
     private JTextArea tadd; 
     private JCheckBox term; 
@@ -70,8 +76,9 @@ public class AddClient extends JFrame implements ActionListener{
   
     // constructor, to initialize the components 
     // with default values. 
-    public AddClient() 
+    public AddWorker(mainFrame frame) 
     { 
+    	this.frame = frame;
         setTitle("Formularz rejestracji"); 
         setBounds(300, 90, 900, 600); 
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
@@ -86,7 +93,7 @@ public class AddClient extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imi�"); 
+        name = new JLabel("Imię"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
@@ -116,31 +123,31 @@ public class AddClient extends JFrame implements ActionListener{
         mno.setLocation(100, 200); 
         c.add(mno); 
   
-        tmno = new JTextField(); 
+        tmno = new JTextField();
         tmno.setText("+48 ");
         tmno.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tmno.setSize(150, 20); 
+        tmno.setSize(140, 20); 
         tmno.setLocation(200, 200); 
         c.add(tmno); 
   
-        gender = new JLabel("P�e�"); 
+        gender = new JLabel("Płeć"); 
         gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
         gender.setSize(100, 20); 
         gender.setLocation(100, 250); 
         c.add(gender); 
   
-        male = new JRadioButton("M�czyzna"); 
+        male = new JRadioButton("Męczyzna"); 
         male.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        male.setSelected(true); 
-        male.setSize(75, 20); 
+        male.setSelected(false); 
+        male.setSize(120, 20); 
         male.setLocation(200, 250); 
         c.add(male); 
   
         female = new JRadioButton("Kobieta"); 
         female.setFont(new Font("Arial", Font.PLAIN, 15)); 
         female.setSelected(false); 
-        female.setSize(80, 20); 
-        female.setLocation(275, 250); 
+        female.setSize(100, 20); 
+        female.setLocation(320, 250); 
         c.add(female); 
   
         gengp = new ButtonGroup(); 
@@ -168,23 +175,34 @@ public class AddClient extends JFrame implements ActionListener{
         year = new JComboBox(years); 
         year.setFont(new Font("Arial", Font.PLAIN, 15)); 
         year.setSize(60, 20); 
-        year.setLocation(320, 300); 
+        year.setLocation(310, 300); 
         c.add(year); 
+        
+        salary = new JLabel("Pensja"); 
+        salary.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        salary.setSize(100, 20); 
+        salary.setLocation(100, 350); 
+        c.add(salary);
   
-        add = new JLabel("Adres"); 
-        add.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        add.setSize(100, 20); 
-        add.setLocation(100, 350); 
-        c.add(add); 
-  
-        tadd = new JTextArea(); 
-        tadd.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tadd.setSize(200, 75); 
-        tadd.setLocation(200, 350); 
-        tadd.setLineWrap(true); 
-        c.add(tadd); 
-  
-  
+        tsalary = new JTextField(); 
+        tsalary.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tsalary.setSize(50, 20); 
+        tsalary.setLocation(200, 350); 
+        c.add(tsalary);
+        
+        occupation = new JLabel("Zawód"); 
+        occupation.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        occupation.setSize(100, 20); 
+        occupation.setLocation(100, 400); 
+        c.add(occupation);
+        
+        jobs = new String[] {"weterynarz", "technik"};
+        coccupation = new JComboBox(jobs);
+        coccupation.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        coccupation.setSize(130, 20); 
+        coccupation.setLocation(200, 400); 
+        c.add(coccupation); 
+        
         sub = new JButton("Dodaj"); 
         sub.setFont(new Font("Arial", Font.PLAIN, 15)); 
         sub.setSize(100, 20); 
@@ -192,7 +210,7 @@ public class AddClient extends JFrame implements ActionListener{
         sub.addActionListener(this); 
         c.add(sub); 
   
-        reset = new JButton("Wyczy��"); 
+        reset = new JButton("Wyczyść"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(270, 450); 
@@ -211,10 +229,76 @@ public class AddClient extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		boolean puste = false;
+		if(e.getSource()==add) {
+			String name = tname.getText();
+			if(name.equals("")) {
+				puste = true;
+			}
+			String surname = tsurname.getText();
+			if(surname.equals("")) {
+				puste = true;
+			}
+			String telephone = tmno.getText();
+			if(telephone.equals("")) {
+				puste = true;
+			}
+			String sex;
+			if(male.isSelected()) {
+				sex = "m";
+			}
+			else if(female.isSelected()) {
+				sex = "f";
+			}
+			else {
+				sex = "";
+			}
+			if(sex.equals("")) {
+				puste = true;
+			}
+			String sday = date.getSelectedItem().toString();
+			if(sday.equals("")) {
+				puste = true;
+			}
+			String smonth = month.getSelectedItem().toString();
+			if(smonth.equals("")) {
+				puste = true;
+			}
+			String syear = year.getSelectedItem().toString();
+			if(syear.equals("")) {
+				puste = true;
+			}
+			String pension = salary.getText();
+			if(pension.equals("")) {
+				puste = true;
+			}
+			String job = coccupation.getSelectedItem().toString();
+			if(job.equals("")) {
+				puste = true;
+			}
+			//jaki format to ma miec
+			if(puste==true) {
+				puste = false;
+				JOptionPane.showMessageDialog(this, "Wypelnij wszystkie pola");
+			}
+			else {
+				String birthday = sday + smonth + syear;
+				ArrayList<String> values = new ArrayList();
+				values.add(name);
+				values.add(surname);
+				values.add(telephone);
+				values.add(sex);
+				values.add(birthday);
+				
+				String[] wyniki = (String[]) values.toArray();
+				
+				frame.getDataBase().insert("klienci",wyniki);
+			}
+		}
 		
 	}
 	
 	public static void main(String[] args) {
-		new AddClient();
+		new AddWorker();
 	}
 }
