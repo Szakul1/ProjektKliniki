@@ -53,7 +53,7 @@ public class mainFrame extends JFrame
                 cards.addTab(employees,null);
 
             case "wterynarz":
-                cards.addTab(clients, new clientPanel(this));
+                cards.addTab(clients, new clientPanel(this, Function.DELETE));
                 
             case "technik":
                 cards.addTab(vaccinations, null);

@@ -24,8 +24,10 @@ public class myPanel extends JPanel implements ActionListener
     JButton select;
     mainFrame frame;
     String table;
-    public myPanel(String table, String[] names, mainFrame frame)
+    Function fun;
+    public myPanel(String table, String[] names, mainFrame frame, Function fun)
     {
+        this.fun = fun;
         this.table=table;
         this.names = names;
         this.frame= frame;
@@ -92,7 +94,7 @@ public class myPanel extends JPanel implements ActionListener
                     information.add(condition.get(i).getText());
                 }
             }
-            frame.getDataBase().select(table,information.toArray(new String[0]),names);
+            frame.getDataBase().select(table,information.toArray(new String[0]),names, fun);
         }
         else
         {

@@ -6,7 +6,6 @@ import java.util.*;
 
 public class DataBaseConnection {
     
-    List<String[]> results;
     Statement stmt;
     mainFrame frame;
     public DataBaseConnection(mainFrame frame) 
@@ -21,11 +20,11 @@ public class DataBaseConnection {
         }
     }
 
-    public void select(String table, String[] conditions, String[] columns)
+    public void select(String table, String[] conditions, String[] columns, Function fun)
     {
         try
         {
-            results = new ArrayList<>();
+            List<String[]> results = new ArrayList<>();
             String testquery = "Select * From " + table + parseConditions(conditions);
             ResultSet res = stmt.executeQuery(testquery);
             while (res.next()) 
@@ -35,11 +34,32 @@ public class DataBaseConnection {
                     row[i] = res.getString(columns[i]);
                 results.add(row);
             }
-            new Results(results.toArray(new String[0][]),columns,frame,table);
+            new Results(results.toArray(new String[0][]),columns,frame,table,fun);
         }
         catch(SQLException ex)
         {
             ex.printStackTrace();
+        }
+    }
+    public String[] selectColumn(String table, String column, String condition)
+    {
+        try
+        {
+            List<String> results = new ArrayList<>();
+            String testquery = "Select " + column +" From " + table + condition;
+            ResultSet res = stmt.executeQuery(testquery);
+            String row;
+            while (res.next()) 
+            {
+                row = res.getString(column);
+                results.add(row);
+            }
+            return results.toArray(new String[0]);
+        }
+        catch(SQLException ex)
+        {
+            ex.printStackTrace();
+            return new String[]{""};
         }
     }
     public int delete(String table, String[] conditions)
