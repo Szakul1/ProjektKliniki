@@ -8,11 +8,12 @@ public class DataBaseConnection {
     
     Statement stmt;
     mainFrame frame;
+    Connection conn;
     public DataBaseConnection(mainFrame frame) 
     {
         this.frame = frame;
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/KlinikaWeterynaryjna", "root", "1234");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/KlinikaWeterynaryjna", "root", "1234");
             stmt = conn.createStatement();
             
         } catch (SQLException ex) {
@@ -22,9 +23,9 @@ public class DataBaseConnection {
 
     public void select(String table, String[] conditions, String[] columns, Function fun)
     {
+        List<String[]> results = new ArrayList<>();
         try
         {
-            List<String[]> results = new ArrayList<>();
             String testquery = "Select * From " + table + parseConditions(conditions);
             ResultSet res = stmt.executeQuery(testquery);
             while (res.next()) 
@@ -41,25 +42,30 @@ public class DataBaseConnection {
             ex.printStackTrace();
         }
     }
-    public String[] selectColumn(String table, String column, String condition)
+    public String[][] selectColumn(String table, String[] column, String condition)
     {
         try
         {
-            List<String> results = new ArrayList<>();
-            String testquery = "Select " + column +" From " + table + condition;
+            List<String[]> results = new ArrayList<>();
+            String columns ="";
+            for(String s : column)
+                columns += s + ",";
+            columns = columns.substring(0, columns.length()-1);
+            String testquery = "Select " + columns +" From " + table +" "+ condition;
             ResultSet res = stmt.executeQuery(testquery);
-            String row;
+            String[] row = new String[column.length];
             while (res.next()) 
             {
-                row = res.getString(column);
+                for(int i=0; i<column.length; i++)
+                    row[i] = res.getString(column[i]);
                 results.add(row);
             }
-            return results.toArray(new String[0]);
+            return results.toArray(new String[0][]);
         }
         catch(SQLException ex)
         {
             ex.printStackTrace();
-            return new String[]{""};
+            return new String[][]{{""}};
         }
     }
     public int delete(String table, String[] conditions)
@@ -108,6 +114,34 @@ public class DataBaseConnection {
         }
     }
 
+    public String[][] callProcedure(String name, String values[], int columnNumber)
+    {
+        CallableStatement cstmt;
+        List<String[]> results = new ArrayList<>();
+        try {
+            String help="";
+            for(String s : values)
+                help+=s+",";
+            help = help.substring(0, help.length()-1);
+            String SQL = "call "+name+" ('"+help+"')";
+            cstmt = conn.prepareCall(SQL);
+            ResultSet res = cstmt.executeQuery();
+            while (res.next()) 
+            {
+                String[] row = new String[columnNumber];
+                for(int i=1; i<=columnNumber; i++)
+                    row[i-1] = res.getString(i);
+                results.add(row);
+            }
+            return results.toArray(new String[0][]);
+        }
+        catch(SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+        return new String[][]{{""}};
+    }
+
     private String parseConditions(String[] information)
     {
         if(information.length<=0)
@@ -134,6 +168,7 @@ public class DataBaseConnection {
     	
     	return result;
     }
+
     public static void main(String[] args) {
         //new DataBaseConnection();
     }

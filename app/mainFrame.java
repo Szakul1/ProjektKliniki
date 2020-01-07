@@ -22,9 +22,11 @@ public class mainFrame extends JFrame
     private static final String vaccinations = "szczepienia";
     private static final String myData = "i";
     DataBaseConnection dataBase;
-
+    Permission perm;
     public mainFrame(String permissions)
     {
+        perm = Permission.CLIENT;
+        perm.setId(1);
         dataBase = new DataBaseConnection(this);
         myDataJButton = new JButton(myData);
         cards = new JTabbedPane();
@@ -47,7 +49,7 @@ public class mainFrame extends JFrame
     {
         switch (permissions) {
             case "admin":
-            cards.addTab(admin, null);
+                cards.addTab(admin, null);
                 
             case "dyrektor":
                 cards.addTab(employees,null);
