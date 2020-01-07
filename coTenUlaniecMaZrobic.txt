@@ -1,0 +1,10 @@
+wbudowany id do selectu
+pokazywanie odpowiednich kolumn np id dla klienta
+logowanie
+panel admina
+odpowiednie karty
+dane w bazie
+walidacja wartosci
+tranzakcja na podwyzke
+obsluga bledow
+triggery
