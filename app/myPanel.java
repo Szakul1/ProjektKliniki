@@ -1,6 +1,7 @@
-package app;
+package app;    
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
@@ -13,7 +14,8 @@ public class myPanel extends JPanel implements ActionListener
      *
      */
     private static final long serialVersionUID = 1L;
-    
+
+    private static final String column = "id";
     JLabel chooseColumn;
     JLabel writeCondition;
     String[] names;
@@ -47,12 +49,17 @@ public class myPanel extends JPanel implements ActionListener
         help.get(0).add(writeCondition);
         help.get(0).add(select);
         add(help.get(0));
+
         addCondition();
     }
     
     private void addCondition()
     {
-        columns.add(new JComboBox<>(names));
+        JComboBox<String> comboBox = new JComboBox<>(names); 
+        if(fun.getId() != -1)
+            comboBox.removeItem(column);
+        columns.add(comboBox);
+
         columns.get(columns.size()-1).addActionListener(this);
         condition.add(new JTextField(20));
         remove.add(new JButton("X"));
@@ -94,6 +101,11 @@ public class myPanel extends JPanel implements ActionListener
                     information.add(condition.get(i).getText());
                 }
             }
+            if(fun.getId() != -1)
+            {
+                information.add(column);
+                information.add(fun.getId()+"");
+            }
             frame.getDataBase().select(table,information.toArray(new String[0]),names, fun);
         }
         else
@@ -103,24 +115,4 @@ public class myPanel extends JPanel implements ActionListener
         }
     }
 
-    private FlowLayout getFlowLayout(int maximumSize)
-    {
-        FlowLayout flowLayout = new FlowLayout()
-        {
-        /**
-			 *
-			 */
-			private static final long serialVersionUID = 1L;
-
-		@Override 
-        public Dimension preferredLayoutSize(Container target)
-        {
-            Dimension dimension = super.preferredLayoutSize(target);
-            dimension.width = Math.min(maximumSize, dimension.width);
-            return dimension;
-        }
-        };
-        flowLayout.setAlignment(FlowLayout.LEADING);
-        return flowLayout;
-    }
 }

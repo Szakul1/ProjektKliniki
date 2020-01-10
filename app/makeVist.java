@@ -116,6 +116,7 @@ public class makeVist extends JFrame implements ActionListener {
         DefaultComboBoxModel<String> model;
         String[][] names;
         String help;
+        String[] help2;
         //String procedure;
         if (e.getSource().equals(idField)) {
             names = frame.getDataBase().selectColumn("zwierzęta", new String[] { "id", "imię" },
@@ -126,17 +127,18 @@ public class makeVist extends JFrame implements ActionListener {
             pack();
         }
         if (e.getSource().equals(services)) {
-            help = "";
             names = frame.getDataBase().callProcedure("wyswietlPracownikow",
-                    new String[] { services.getSelectedItem().toString() }, 3);
+            new String[] { services.getSelectedItem().toString() }, 3);
             idWorker = names[0];
-            for (int i = 0; i < names[0].length; i++) {
-                help += names[1][i] + " ";
-                help += names[2][i];
-                names[1][i] = help;
+            help2 = new String[names.length];
+            for (int i = 0; i < names.length; i++) {
+                help2[i] = "";
+                help2[i] += names[i][1] + " ";
+                help2[i] += names[i][1];
             }
-            model = new DefaultComboBoxModel<>(names[1]);
+            model = new DefaultComboBoxModel<>(help2);
             workers.setModel(model);
+            workers.setPrototypeDisplayValue(null);
 
             pack();
         }
@@ -174,12 +176,6 @@ public class makeVist extends JFrame implements ActionListener {
                 */
 
         }
-    }
-
-    public static void main(String[] args) {
-        Permission p = Permission.ADMIN;
-        p.setId(1);
-        new makeVist(new mainFrame("admin"), p);
     }
 
 }

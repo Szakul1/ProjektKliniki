@@ -20,7 +20,7 @@ public class mainFrame extends JFrame
     private static final String visits = "wizyty";
     private static final String grafic = "grafik";
     private static final String vaccinations = "szczepienia";
-    private static final String myData = "i";
+    private static final String myData = "informacje";
     DataBaseConnection dataBase;
     Permission perm;
     public mainFrame(Permission perm)
@@ -28,7 +28,8 @@ public class mainFrame extends JFrame
         this.perm = perm;
         //perm.setId(1);
         dataBase = new DataBaseConnection(this);
-        myDataJButton = new JButton(myData);
+        //myDataJButton = new JButton(myData);
+
         cards = new JTabbedPane();
         addCards(this.perm);
 
@@ -55,7 +56,7 @@ public class mainFrame extends JFrame
                 cards.addTab(employees,null);
 
             case VET:
-                cards.addTab(clients, new clientPanel(this, Function.DELETE));
+                cards.addTab(clients, new clientPanel(this, permissions));
                 
             case TECHNICIAN:
                 cards.addTab(vaccinations, null);
@@ -65,8 +66,8 @@ public class mainFrame extends JFrame
                 cards.addTab(visits, null);
                 cards.addTab(animals, null);
                 cards.addTab(grafic, null);
-                cards.addTab(info, null);
-                cards.add(myDataJButton);
+                //cards.addTab(myData, null);
+                //cards.add(myDataJButton);
             default:
                 break;
         }

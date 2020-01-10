@@ -1,3 +1,4 @@
+
 package app;
 
 import java.sql.*;
@@ -164,9 +165,13 @@ public class DataBaseConnection {
         List<String[]> results = new ArrayList<>();
         try {
             String help="";
+            /*
             for(String s : values)
                 help+=s+",";
+            
             help = help.substring(0, help.length()-1);
+            */
+            
             String SQL = "call "+name+" ('"+help+"')";
             cstmt = conn.prepareCall(SQL);
             ResultSet res = cstmt.executeQuery();
@@ -177,7 +182,7 @@ public class DataBaseConnection {
                     row[i-1] = res.getString(i);
                 results.add(row);
             }
-            return results.toArray(new String[0][]);
+            return results.toArray(new String[results.size()][]);
         }
         catch(SQLException ex)
         {
