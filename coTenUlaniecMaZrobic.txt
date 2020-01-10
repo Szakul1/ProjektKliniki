@@ -1,10 +1,10 @@
-wbudowany id do selectu
-pokazywanie odpowiednich kolumn np id dla klienta
+wbudowany id do selectu, where=id
+pokazywanie odpowiednich kolumn np id dla klienta?
 logowanie
 panel admina
 odpowiednie karty
 dane w bazie
-walidacja wartosci
-tranzakcja na podwyzke
-obsluga bledow
+walidacja wartosci 9 cyfr dla numeru;
+transakcja na podwyzke
 triggery
+indeksy

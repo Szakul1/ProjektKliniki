@@ -11,7 +11,8 @@ public class login extends JFrame implements ActionListener
      *
      */
     private static final long serialVersionUID = 1L;
-
+    
+    DataBaseConnection dataBase;
     JLabel login;
     JLabel password;
     JTextField loginField;
@@ -20,6 +21,7 @@ public class login extends JFrame implements ActionListener
     JPanel help;
     public login()
     {
+        dataBase = new DataBaseConnection();
         login = new JLabel("Login: ");
         password = new JLabel("Hasło: ");
         loginField = new JTextField(20);
@@ -55,7 +57,18 @@ public class login extends JFrame implements ActionListener
     {
         if(e.getActionCommand().equals("Login"))
         {
-            new mainFrame(loginField.getText());
+        	//sprawdz czy puste
+        	String[] logs = {loginField.getText(), String.copyValueOf(passwordField.getPassword())};
+        	Permission perm = dataBase.login(logs);
+        	if(perm == null) {
+        		 JOptionPane.showMessageDialog(this,
+               	        "Niepoprawny login lub haslo");
+        	}
+        	else {
+        		new mainFrame(perm);
+        	}
+            //uprawnienia i id
+        	//new mainFrame(loginField.getText());
             setVisible(false);
         }
     }

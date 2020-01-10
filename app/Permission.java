@@ -2,6 +2,7 @@ package app;
 public enum Permission
 {
     ADMIN,
+    DIRECTOR,
     VET,
     TECHNICIAN,
     CLIENT;

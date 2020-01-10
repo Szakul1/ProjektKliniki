@@ -20,7 +20,51 @@ public class DataBaseConnection {
             ex.printStackTrace();
         }
     }
+    
+    public DataBaseConnection() {
+    	
+    	 try {
+             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/KlinikaWeterynaryjna", "root", "1234");
+             stmt = conn.createStatement();
+             
+         } catch (SQLException ex) {
+             ex.printStackTrace();
+         }
+    
+    }
 
+    public ArrayList<String> select_info(String table, String id) {
+    	ArrayList<String> results = new ArrayList();
+        try
+        {
+        	String testquery;
+        	if(table.equals("klienci")) {
+        		testquery = "Select imie,nazwisko,numer_tel From " + table + " WHERE id=" + id;
+        	}
+        	else {
+        		testquery = "Select imie,nazwisko,numer_tel,data_urodzenia,pensja,zawod From " + table + " WHERE id=" + id;
+        	}
+        	ResultSet res = stmt.executeQuery(testquery);
+        	results.add(res.getString("imie"));
+        	results.add(res.getString("nazwisko"));
+        	results.add(res.getString("numer_tel"));
+        	if(table.equals("pracownicy")) {
+        		results.add(res.getString("data_urodzenia"));
+        		results.add(res.getString("pensja"));
+        		results.add(res.getString("zawod"));
+        	}
+        }
+        catch(SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+        return results;
+    }
+    
+    
+    
+    
+    
     public void select(String table, String[] conditions, String[] columns, Function fun)
     {
         List<String[]> results = new ArrayList<>();
@@ -167,6 +211,50 @@ public class DataBaseConnection {
     	result += ")";
     	
     	return result;
+    }
+    
+    private String parseLogin(String[] values) {
+    	String result = "Where login=" + values[0] + " AND haslo=" + values[1];
+    	return result;
+    }
+    
+    Permission login(String[] values) {
+    	 Permission permission = null;
+         try
+         {
+        	 String perm = "";
+        	 int id;
+             String testquery = "Select * From uzytkownicy " + parseLogin(values);
+             ResultSet res = stmt.executeQuery(testquery);
+
+             perm = res.getString("uprawnienia");
+             id = Integer.parseInt(res.getString("id"));
+
+             if(perm.equals("technik")) {
+            	 permission = Permission.TECHNICIAN;
+             }
+             else if(perm.equals("weterynarz")) {
+            	 permission = Permission.VET;
+             }
+             else if(perm.equals("dyrektor")) {
+            	 permission = Permission.DIRECTOR;
+             }
+             else if(perm.equals("admin")) {
+            	 permission = Permission.ADMIN;
+             }
+             else if(perm.equals("klient")){
+            	 permission = Permission.CLIENT;
+             }
+             else {
+            	 //cos poszlo nie tak
+             }
+             permission.setId(id);
+         }
+         catch(SQLException ex)
+         {
+             ex.printStackTrace();
+         }
+        return permission;
     }
 
     public static void main(String[] args) {

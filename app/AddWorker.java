@@ -299,6 +299,6 @@ public class AddWorker extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		new AddWorker();
+		//new AddWorker();
 	}
 }

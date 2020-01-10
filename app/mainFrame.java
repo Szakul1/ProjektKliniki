@@ -23,14 +23,14 @@ public class mainFrame extends JFrame
     private static final String myData = "i";
     DataBaseConnection dataBase;
     Permission perm;
-    public mainFrame(String permissions)
+    public mainFrame(Permission perm)
     {
-        perm = Permission.CLIENT;
-        perm.setId(1);
+        this.perm = perm;
+        //perm.setId(1);
         dataBase = new DataBaseConnection(this);
         myDataJButton = new JButton(myData);
         cards = new JTabbedPane();
-        addCards(permissions);
+        addCards(this.perm);
 
         setLayout(new BorderLayout());
         add(cards, BorderLayout.NORTH);
@@ -45,28 +45,28 @@ public class mainFrame extends JFrame
         return dataBase;
     }
 
-    private void addCards(String permissions)
+    private void addCards(Permission permissions)
     {
         switch (permissions) {
-            case "admin":
+            case ADMIN:
                 cards.addTab(admin, null);
                 
-            case "dyrektor":
+            case DIRECTOR:
                 cards.addTab(employees,null);
 
-            case "wterynarz":
+            case VET:
                 cards.addTab(clients, new clientPanel(this, Function.DELETE));
                 
-            case "technik":
+            case TECHNICIAN:
                 cards.addTab(vaccinations, null);
 
-            case "klient":
+            case CLIENT:
                 cards.addTab(services, null);
                 cards.addTab(visits, null);
                 cards.addTab(animals, null);
                 cards.addTab(grafic, null);
+                cards.addTab(info, null);
                 cards.add(myDataJButton);
-
             default:
                 break;
         }
