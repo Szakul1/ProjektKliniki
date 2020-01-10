@@ -34,7 +34,7 @@ public class clientPanel extends JPanel implements ActionListener
             fun = Function.SELECT;
             fun.setId(perm.getId());
         }
-        select = new myPanel("klienci",new String[]{"id","imię","nazwisko","numer_tel","zniżka%"},frame, fun);
+        select = new myPanel("klienci",new String[]{"id","imię","nazwisko","numer_tel"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 
