@@ -1,0 +1,19 @@
+
+stmt.execute("CREATE TRIGGER after_delete_client AFTER DELETE ON klienci " //
+        + "FOR EACH ROW "//
+        + "BEGIN "//
+        + "SET @id = OLD.id"//
+        + "   DELETE FROM zwierzeta WHERE id_klienta = @id; "//
+        + "END;");
+stmt.execute("CREATE TRIGGER after_delete_pet AFTER DELETE ON zwierzeta " //
+        + "FOR EACH ROW "//
+        + "BEGIN "//
+        + "SET @id = OLD.id_zwierzecia"//
+        + "   DELETE FROM szczepienia WHERE id_zwierzecia = @id; "//
+        + "END;");
+stmt.execute("CREATE TRIGGER after_delete_employee AFTER DELETE ON pracownicy " //
+        + "FOR EACH ROW "//
+        + "BEGIN "//
+        + "SET @id = OLD.id"//
+        + "   DELETE FROM grafik WHERE id_pracownika = @id; "//
+        + "END;");
