@@ -2,112 +2,82 @@
 -- Last modification date: 2019-12-20 21:41:21.672
 
 -- tables
--- Table: domowe
-CREATE TABLE domowe (
-    id int NOT NULL,
-    imiÄ™ varchar(30) NOT NULL,
-    data_urodzenia date NOT NULL,
-    gatunek varchar(30) NOT NULL,
-    waga int NOT NULL,
-    pÅ‚eÄ‡ enum('f','m') NOT NULL,
-    kastrowane bool NOT NULL,
-    CONSTRAINT domowe_pk PRIMARY KEY (id)
-) COMMENT 'przechowuje dane zwierzÄ…t domowych';
-
--- Table: egzotyczne
-CREATE TABLE egzotyczne (
-    id int NOT NULL,
-    imiÄ™ varchar(30) NOT NULL,
-    data_urodzenia date NOT NULL,
-    gatunek varchar(30) NOT NULL,
-    waga int NOT NULL,
-    pÅ‚eÄ‡ enum('f','m') NOT NULL,
-    kraj_pochodzenia varchar(30) NOT NULL,
-    CONSTRAINT egzotyczne_pk PRIMARY KEY (id)
-) COMMENT 'przechowuje dane zwierzÄ…t  egzotycznych';
-
 -- Table: grafik
 CREATE TABLE grafik (
     id_pracownika int NOT NULL,
-    dzieÅ„ enum('poniedziaÅ‚ek','wtorek','Å›roda','czwartek','piÄ…tek') NOT NULL,
-    rozpoczÄ™cie time NOT NULL,
-    zakoÅ„czenie time NOT NULL
-) COMMENT 'przechowuje godziny pracy pracownikÃ³w';
+    dzieñ enum('poniedzia³ek','wtorek','œroda','czwartek','pi¹tek') NOT NULL,
+    rozpoczêcie time NOT NULL,
+    zakoñczenie time NOT NULL
+) COMMENT 'przechowuje godziny pracy pracowników';
 
--- Table: hodowlane
-CREATE TABLE hodowlane (
-    id int NOT NULL,
-    imiÄ™ varchar(30) NOT NULL,
-    data_urodzenia date NOT NULL,
-    gatunek varchar(30) NOT NULL,
-    waga int NOT NULL,
-    pÅ‚eÄ‡ enum('f','m') NOT NULL,
-    przeznaczenie varchar(30) NOT NULL,
-    CONSTRAINT hodowlane_pk PRIMARY KEY (id)
-) COMMENT 'przechowuje dane zwierzÄ…t hodowlanych';
 
 -- Table: klienci
 CREATE TABLE klienci (
     id int NOT NULL AUTO_INCREMENT,
-    imiÄ™ varchar(30) NOT NULL,
+    imiê varchar(30) NOT NULL,
     nazwisko varchar(30) NOT NULL,
     numer_tel int NOT NULL,
-    `zniÅ¼ka%` int NOT NULL COMMENT 'zniÅ¼ka na usÅ‚ugi w procentach' CHECK (`zniÅ¼ka%` BETWEEN 0 AND 100),
     CONSTRAINT klienci_pk PRIMARY KEY (id)
-) COMMENT 'przechowuje dane klientÃ³w w klinice';
+) COMMENT 'przechowuje dane klientów w klinice';
 
 -- Table: pracownicy
 CREATE TABLE pracownicy (
     id int NOT NULL AUTO_INCREMENT,
-    imiÄ™ varchar(30) NOT NULL,
+    imiê varchar(30) NOT NULL,
     nazwisko varchar(30) NOT NULL,
     numer_tel int NOT NULL,
     data_urodzenia date NOT NULL,
     pensja int NOT NULL CHECK (pensja>=0),
-    zawÃ³d enum('weterynarz','technik') NOT NULL,
+    zawód enum('weterynarz','technik') NOT NULL,
     CONSTRAINT pracownicy_pk PRIMARY KEY (id)
-) COMMENT 'przechowuje dane pracownikÃ³w pracujÄ…cych w klinice';
+) COMMENT 'przechowuje dane pracowników pracuj¹cych w klinice';
 
 -- Table: szczepienia
 CREATE TABLE szczepienia (
-    id_zwierzÄ™cia int NOT NULL,
+    id_zwierzêcia int NOT NULL,
     choroba int NOT NULL,
     czy_w_tej_klinice bool NOT NULL
 );
 
--- Table: usÅ‚ugi
-CREATE TABLE usÅ‚ugi (
+-- Table: us³ugi
+CREATE TABLE us³ugi (
     nazwa varchar(30) NOT NULL,
     cena int NOT NULL CHECK (cena>=0),
-    zawÃ³d enum('weterynarz','technik') NOT NULL COMMENT 'kto moÅ¼e wykonaÄ‡ danÄ… usÅ‚ugÄ™',
-    CONSTRAINT usÅ‚ugi_pk PRIMARY KEY (nazwa)
-) COMMENT 'przechowuje moÅ¼liwe do wykonania usÅ‚ugi w klinice';
+    zawód enum('weterynarz','technik') NOT NULL COMMENT 'kto mo¿e wykonaæ dan¹ us³ugê',
+    CONSTRAINT us³ugi_pk PRIMARY KEY (nazwa)
+) COMMENT 'przechowuje mo¿liwe do wykonania us³ugi w klinice';
 
--- Table: uÅ¼ytkownicy
-CREATE TABLE uÅ¼ytkownicy (
+-- Table: u¿ytkownicy
+CREATE TABLE u¿ytkownicy (
     login varchar(30) NOT NULL,
-    hasÅ‚o varchar(32) NOT NULL,
-    uprawnienia enum('klient','technik','weterynarz','dyrektor','admin') NOT NULL COMMENT 'stopieÅ„ dostÄ™pu do bazy danych',
+    has³o varchar(32) NOT NULL,
+    uprawnienia enum('klient','technik','weterynarz','dyrektor','admin') NOT NULL COMMENT 'stopieñ dostêpu do bazy danych',
     id int NULL COMMENT 'id pracownika lub klienta',
-    CONSTRAINT uÅ¼ytkownicy_pk PRIMARY KEY (login)
-) COMMENT 'przechowuje dane niezbÄ™dne do logowania';
+    CONSTRAINT u¿ytkownicy_pk PRIMARY KEY (login)
+) COMMENT 'przechowuje dane niezbêdne do logowania';
 
 -- Table: wizyty
 CREATE TABLE wizyty (
     id_pracownika int NOT NULL,
-    id_zwierzÄ™cia int NOT NULL,
+    id_zwierzêcia int NOT NULL,
     termin timestamp NOT NULL CHECK (TIME(termin) BETWEEN '7:00' AND '17:00'),
     cel_wizyty varchar(30) NOT NULL,
-    opÅ‚ata int NOT NULL CHECK (opÅ‚ata>=0)
-) COMMENT 'tabela przechowujÄ…ca odbyte oraz zaplanowane wizyty';
+    op³ata int NOT NULL CHECK (op³ata>=0)
+) COMMENT 'tabela przechowuj¹ca odbyte oraz zaplanowane wizyty';
 
--- Table: zwierzÄ™ta
-CREATE TABLE zwierzÄ™ta (
-    id_zwierzÄ™cia int NOT NULL AUTO_INCREMENT,
+-- Table: zwierzêta
+CREATE TABLE zwierzêta (
+    id_zwierzêcia int NOT NULL AUTO_INCREMENT,
     id_klienta int NOT NULL,
-    rodzaj enum('domowe','hodowlane','egzotyczne') NOT NULL,
-    CONSTRAINT zwierzÄ™ta_pk PRIMARY KEY (id_zwierzÄ™cia,id_klienta,rodzaj)
-) COMMENT 'tabela Å‚Ä…czÄ…ca zwierzÄ™ta z klientami kliniki';
+    imiê varchar(30) NOT NULL,
+    data_urodzenia date NOT NULL,
+    gatunek varchar(30) NOT NULL,
+    waga int NOT NULL,
+    p³eæ enum('f','m') NOT NULL,
+    kastrowane bool NOT NULL,
+    kraj_pochodzenia varchar(30) NOT NULL,
+    CONSTRAINT zwierzêta_pk PRIMARY KEY (id_zwierzêcia)
+) COMMENT 'tabela ³¹cz¹ca zwierzêta z klientami kliniki';
 
 -- foreign keys
 -- Reference: grafik_pracownicy (table: grafik)
@@ -118,33 +88,21 @@ ALTER TABLE grafik ADD CONSTRAINT grafik_pracownicy FOREIGN KEY grafik_pracownic
 ALTER TABLE wizyty ADD CONSTRAINT pracownik_wizyta FOREIGN KEY pracownik_wizyta (id_pracownika)
     REFERENCES pracownicy (id);
 
--- Reference: wizyta_usÅ‚uga (table: wizyty)
-ALTER TABLE wizyty ADD CONSTRAINT wizyta_usÅ‚uga FOREIGN KEY wizyta_usÅ‚uga (cel_wizyty)
-    REFERENCES usÅ‚ugi (nazwa);
+-- Reference: wizyta_us³uga (table: wizyty)
+ALTER TABLE wizyty ADD CONSTRAINT wizyta_us³uga FOREIGN KEY wizyta_us³uga (cel_wizyty)
+    REFERENCES us³ugi (nazwa);
 
--- Reference: zwierzÄ™_klienci (table: zwierzÄ™ta)
-ALTER TABLE zwierzÄ™ta ADD CONSTRAINT zwierzÄ™_klienci FOREIGN KEY zwierzÄ™_klienci (id_klienta)
+-- Reference: zwierzê_klienci (table: zwierzêta)
+ALTER TABLE zwierzêta ADD CONSTRAINT zwierzê_klienci FOREIGN KEY zwierzê_klienci (id_klienta)
     REFERENCES klienci (id);
-    
--- Reference: zwierzÄ™_domowe (table: zwierzÄ™ta)
-ALTER TABLE zwierzÄ™ta ADD CONSTRAINT zwierzÄ™_domowe FOREIGN KEY zwierzÄ™_domowe (id_zwierzÄ™cia)
-    REFERENCES domowe (id);
-    
--- Reference: zwierzÄ™_klienci (table: zwierzÄ™ta)
-ALTER TABLE zwierzÄ™ta ADD CONSTRAINT zwierzÄ™_egzotyczne FOREIGN KEY zwierzÄ™_egzotyczne (id_zwierzÄ™cia)
-    REFERENCES egzotyczne (id);
-    
--- Reference: zwierzÄ™_klienci (table: zwierzÄ™ta)
-ALTER TABLE zwierzÄ™ta ADD CONSTRAINT zwierzÄ™_hodowlane FOREIGN KEY zwierzÄ™_hodowlane (id_zwierzÄ™cia)
-    REFERENCES hodowlane (id);
 
--- Reference: zwierzÄ™_wizyta (table: wizyty)
-ALTER TABLE wizyty ADD CONSTRAINT zwierzÄ™_wizyta FOREIGN KEY zwierzÄ™_wizyta (id_zwierzÄ™cia)
-    REFERENCES zwierzÄ™ta (id_zwierzÄ™cia);
+-- Reference: zwierzê_wizyta (table: wizyty)
+ALTER TABLE wizyty ADD CONSTRAINT zwierzê_wizyta FOREIGN KEY zwierzê_wizyta (id_zwierzêcia)
+    REFERENCES zwierzêta (id_zwierzêcia);
 
--- Reference: zwierzÄ™ta_szczepienia (table: szczepienia)
-ALTER TABLE szczepienia ADD CONSTRAINT zwierzÄ™ta_szczepienia FOREIGN KEY zwierzÄ™ta_szczepienia (id_zwierzÄ™cia)
-    REFERENCES zwierzÄ™ta (id_zwierzÄ™cia);
+-- Reference: zwierzêta_szczepienia (table: szczepienia)
+ALTER TABLE szczepienia ADD CONSTRAINT zwierzêta_szczepienia FOREIGN KEY zwierzêta_szczepienia (id_zwierzêcia)
+    REFERENCES zwierzêta (id_zwierzêcia);
 
 -- End of file.
 

@@ -230,6 +230,7 @@ public class AddWorker extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		boolean puste = false;
+		boolean zle = false;
 		if(e.getSource()==add) {
 			String name = tname.getText();
 			if(name.equals("")) {
@@ -242,6 +243,9 @@ public class AddWorker extends JFrame implements ActionListener{
 			String telephone = tmno.getText();
 			if(telephone.equals("")) {
 				puste = true;
+			}
+			else if(telephone.length()<9){
+				zle = true;
 			}
 			String sex;
 			if(male.isSelected()) {
@@ -280,6 +284,10 @@ public class AddWorker extends JFrame implements ActionListener{
 			if(puste==true) {
 				puste = false;
 				JOptionPane.showMessageDialog(this, "Wypelnij wszystkie pola");
+			}
+			else if(zle == true) {
+				zle = false;
+				JOptionPane.showMessageDialog(this, "Zly numer telefonu");
 			}
 			else {
 				String birthday = sday + smonth + syear;

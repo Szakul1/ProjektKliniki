@@ -62,10 +62,11 @@ public class mainFrame extends JFrame
                 cards.addTab(vaccinations, null);
 
             case CLIENT:
-                cards.addTab(services, null);
-                cards.addTab(visits, null);
-                cards.addTab(animals, null);
-                cards.addTab(grafic, null);
+            	cards.addTab(services, new servicePanel(this, permissions));
+                cards.addTab(visits, new visitPanel(this, permissions));
+                cards.addTab(animals, new petPanel(this, permissions));
+                cards.addTab(grafic, new graficPanel(this,permissions));
+                cards.addTab("Moje dane", new Info(this.getDataBase().select_info(permissions)));
                 //cards.addTab(myData, null);
                 //cards.add(myDataJButton);
             default:

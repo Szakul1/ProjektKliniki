@@ -34,8 +34,16 @@ public class DataBaseConnection {
     
     }
 
-    public ArrayList<String> select_info(String table, String id) {
+    public ArrayList<String> select_info(Permission perm) {
     	ArrayList<String> results = new ArrayList();
+    	String table = "";
+    	if(perm == Permission.CLIENT) {
+    		table = "klienci";
+    	}
+    	else if(perm == Permission.VET || perm == Permission.TECHNICIAN) {
+    		table = "pracownicy";
+    	}
+    	String id = Integer.toString(perm.getId());
         try
         {
         	String testquery;
@@ -144,6 +152,48 @@ public class DataBaseConnection {
         }
     }
     
+    public void giveRaise(int percent) {
+    	
+    	List<Integer> results = new ArrayList();
+    	String testquery = "Select pensja From pracownicy";
+        ResultSet res = null;
+		try {
+			res = stmt.executeQuery(testquery);
+			while(res.next()) {
+				results.add(res.getInt("pensja"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+    	
+    	PreparedStatement updateSalary = null;
+    	for(int s:results) {
+    		int raise = s+s*percent/100;
+    		String updateString = 
+    				"Update pracownicy Set pensja=" + raise + " Where pensja=" + s;
+    		try {
+				updateSalary = conn.prepareStatement(updateString);
+				updateSalary.executeUpdate();
+				conn.commit();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				if(conn!=null) {
+					try {
+						System.err.print("Transaction is being rolled back");
+						conn.rollback();
+					} catch(SQLException excep) {
+						e.printStackTrace();
+					}
+				}
+			}
+    	
+    	}
+    		
+    }
+    
     public int insert(String table, String[] values) {
     	try
         {
@@ -205,6 +255,10 @@ public class DataBaseConnection {
                 result+=" AND ";
         }
         return result;
+    }
+    
+    void call(String query) throws SQLException {
+    	stmt.executeQuery(query);
     }
     
     private String parseValues(String[] values) {

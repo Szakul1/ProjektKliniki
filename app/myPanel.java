@@ -30,9 +30,9 @@ public class myPanel extends JPanel implements ActionListener
     public myPanel(String table, String[] names, mainFrame frame, Function fun)
     {
         this.fun = fun;
-        this.table=table;
+        this.table = table;
         this.names = names;
-        this.frame= frame;
+        this.frame = frame;
         help = new ArrayList<>();
         columns = new ArrayList<>();
         condition = new ArrayList<>();
