@@ -103,7 +103,7 @@ public class myPanel extends JPanel implements ActionListener
             }
             if(fun.getId() != -1)
             {
-                information.add(column);
+                information.add(table.equals("zwierzęta") ? "id_zwierzęcia" : "id");
                 information.add(fun.getId()+"");
             }
             frame.getDataBase().select(table,information.toArray(new String[0]),names, fun);
