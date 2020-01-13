@@ -17,3 +17,9 @@ stmt.execute("CREATE TRIGGER after_delete_employee AFTER DELETE ON pracownicy " 
         + "SET @id = OLD.id"//
         + "   DELETE FROM grafik WHERE id_pracownika = @id; "//
         + "END;");
+stmt.execute("CREATE TRIGGER after_delete_employee2 AFTER DELETE ON pracownicy " //
+        + "FOR EACH ROW "//
+        + "BEGIN "//
+        + "SET @id = OLD.id"//
+        + "   DELETE FROM uzytkownicy WHERE id_pracownika = @id; "//
+        + "END;");
