@@ -23,3 +23,6 @@
 /userPanel.class
 /graficPanel.class
 /adminPanel.class
+/employeePanel.class
+/vaccinationsPanel.class
+/AddVaccination.class

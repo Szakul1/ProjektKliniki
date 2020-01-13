@@ -50,16 +50,16 @@ public class mainFrame extends JFrame
     {
         switch (permissions) {
             case ADMIN:
-                cards.addTab(admin, null);
+                cards.addTab(admin, new adminPanel(this));
                 
             case DIRECTOR:
-                cards.addTab(employees,null);
+                cards.addTab(employees,new employeePanel(this, permissions));
 
             case VET:
                 cards.addTab(clients, new clientPanel(this, permissions));
                 
             case TECHNICIAN:
-                cards.addTab(vaccinations, null);
+                cards.addTab(vaccinations, new vaccinationsPanel(this, permissions));
 
             case CLIENT:
             	cards.addTab(services, new servicePanel(this, permissions));
