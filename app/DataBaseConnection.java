@@ -1,4 +1,3 @@
-
 package app;
 
 import java.sql.*;
@@ -277,8 +276,8 @@ public class DataBaseConnection {
     	return result;
     }
     
-    Permission login(String[] values) {
-    	 Permission permission = null;
+    Permision login(String[] values) {
+    	 Permision permision = null;
          try
          {
         	 String perm = "";
@@ -290,30 +289,30 @@ public class DataBaseConnection {
              id = Integer.parseInt(res.getString("id"));
 
              if(perm.equals("technik")) {
-            	 permission = Permission.TECHNICIAN;
+            	 permision = Permision.TECHNICIAN;
              }
              else if(perm.equals("weterynarz")) {
-            	 permission = Permission.VET;
+            	 permision = Permision.VET;
              }
              else if(perm.equals("dyrektor")) {
-            	 permission = Permission.DIRECTOR;
+            	 permision = Permision.DIRECTOR;
              }
              else if(perm.equals("admin")) {
-            	 permission = Permission.ADMIN;
+            	 permision = Permision.ADMIN;
              }
              else if(perm.equals("klient")){
-            	 permission = Permission.CLIENT;
+            	 permision = Permision.CLIENT;
              }
              else {
             	 //cos poszlo nie tak
              }
-             permission.setId(id);
+             permision.setId(id);
          }
          catch(SQLException ex)
          {
              ex.printStackTrace();
          }
-        return permission;
+        return permision;
     }
 
     public static void main(String[] args) {
