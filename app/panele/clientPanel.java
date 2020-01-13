@@ -1,4 +1,7 @@
-package app;
+package app.panele;
+
+import app.*;
+import app.adders.AddClient;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +37,7 @@ public class clientPanel extends JPanel implements ActionListener
             fun = Function.SELECT;
             fun.setId(perm.getId());
         }
-        select = new myPanel("klienci",new String[]{"id","imie","nazwisko","numer_tel"},frame, fun);
+        select = new myPanel("klienci",new String[]{"id","imię","nazwisko","numer_tel"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 

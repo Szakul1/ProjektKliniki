@@ -1,8 +1,8 @@
 package app;
+import app.panele.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.security.acl.Permission;
 
 public class mainFrame extends JFrame
 {

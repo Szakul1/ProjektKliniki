@@ -34,7 +34,7 @@ public class makeVist extends JFrame implements ActionListener {
     final SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
     final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 
-    public makeVist(mainFrame frame, Permission perm) {
+    public makeVist(mainFrame frame, Permision perm) {
         this.frame = frame;
         this.perm = perm;
 
@@ -154,7 +154,7 @@ public class makeVist extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("Zapisz się") && picker.getDate() != null && services.getSelectedIndex() != -1
                 && animals.getSelectedIndex() != -1) {
 
-            if (perm.equals(Permission.CLIENT))
+            if (perm.equals(Permision.CLIENT))
                 help = Integer.toString(perm.getId());
             else
                 help = idField.getText();

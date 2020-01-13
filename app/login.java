@@ -59,7 +59,7 @@ public class login extends JFrame implements ActionListener
         {
         	//sprawdz czy puste
         	String[] logs = {loginField.getText(), String.copyValueOf(passwordField.getPassword())};
-        	Permission perm = dataBase.login(logs);
+        	Permision perm = dataBase.login(logs);
         	if(perm == null) {
         		 JOptionPane.showMessageDialog(this,
                	        "Niepoprawny login lub haslo");

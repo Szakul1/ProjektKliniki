@@ -1,10 +1,9 @@
-package app;
+package app.panele;
+import app.*;
 
 import javax.swing.JPanel;
-import javax.swing.BorderFactory;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -23,7 +22,7 @@ public class adminPanel extends JPanel implements ActionListener{
 	GridBagLayout gbPanel0 = new GridBagLayout();
 	GridBagConstraints gbcPanel0 = new GridBagConstraints();
 	
-	adminPanel(mainFrame main){
+	public adminPanel(mainFrame main){
 		this.main = main;
 
 		pnPanel0 = new JPanel();

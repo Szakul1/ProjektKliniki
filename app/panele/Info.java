@@ -1,4 +1,4 @@
-package app;
+package app.panele;
 
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
@@ -32,7 +32,7 @@ public class Info extends JPanel{
 	JTextField tfT_salary;
 	JTextField tfT_occupation;
 
-	Info(ArrayList<String> data){
+	public Info(ArrayList<String> data){
 		
 		
 	if(data.get(0).equals("klienci")) {

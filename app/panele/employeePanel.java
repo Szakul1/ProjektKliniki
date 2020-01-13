@@ -1,4 +1,7 @@
-package app;
+package app.panele;
+
+import app.adders.AddWorker;
+import app.*;
 
 import javax.swing.*;
 import java.awt.*;

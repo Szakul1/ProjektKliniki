@@ -26,10 +26,18 @@ public class myPanel extends JPanel implements ActionListener
     mainFrame frame;
     String table;
     Function fun;
-    String column;
+    String column; //wbudowany select na jak kolumne
+    String[] animalId;
     public myPanel(String table, String[] names, mainFrame frame, Function fun)
     {
-        column = table.equals("zwierzeta") ? "id_zwierzecia" : "id";
+        if(table.equals("zwierzęta"))
+            column = "id_klienta";
+        if(table.equals("wizyty"))
+        {
+            animalId = frame.getDataBase().selectColumn("zwierzeta",
+            new String[]{"id_zwierzecia"}, "Where id_zwirzecia="+fun.getId())[0];
+            column = "id_zwirzęcia";
+        }
         this.fun = fun;
         this.table=table;
         this.names = names;
@@ -104,8 +112,17 @@ public class myPanel extends JPanel implements ActionListener
             }
             if(fun.getId() != -1)
             {
-                information.add(column);
-                information.add(fun.getId()+""); //wbudowany select
+                // tu zrobic pelte po id w dla zwierzat
+                if(table.equals("zwierzęta"))
+                    for (int i = 0; i < animalId.length; i++) {
+                        information.add(column);
+                        information.add(animalId[i]);
+                    }    
+                else
+                {
+                    information.add(column);
+                    information.add(fun.getId()+""); //wbudowany select
+                }
             }
             frame.getDataBase().select(table,information.toArray(new String[0]),names, fun);
         }

@@ -1,4 +1,5 @@
-package app;
+package app.adders;
+import app.*;
 
 import java.awt.Container;
 import java.awt.Font;
@@ -84,7 +85,7 @@ public class AddClient extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imiê½"); 
+        name = new JLabel("Imiï¿½"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
