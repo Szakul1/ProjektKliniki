@@ -1,5 +1,5 @@
 package app;
-public enum Permission
+public enum Permision
 {
     ADMIN,
     DIRECTOR,

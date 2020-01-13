@@ -15,7 +15,7 @@ public class vaccinationsPanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public vaccinationsPanel(mainFrame frame, Permission perm) 
+    public vaccinationsPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
@@ -23,7 +23,7 @@ public class vaccinationsPanel extends JPanel implements ActionListener
         setLayout(new BorderLayout());
         add = new JButton("Dodaj Szczepienie");
         add.addActionListener(this);
-        if(perm != Permission.TECHNICIAN)
+        if(perm != Permision.TECHNICIAN)
         {   
             fun = Function.DELETE;
             fun.setId(-1);

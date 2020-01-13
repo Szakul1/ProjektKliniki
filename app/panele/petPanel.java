@@ -15,7 +15,7 @@ public class petPanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public petPanel(mainFrame frame, Permission perm) 
+    public petPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
@@ -23,7 +23,7 @@ public class petPanel extends JPanel implements ActionListener
         setLayout(new BorderLayout());
         add = new JButton("Dodaj Zwierzaka");
         add.addActionListener(this);
-        if(perm != Permission.TECHNICIAN && perm != Permission.CLIENT)
+        if(perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
         {   
             fun = Function.DELETE;
             fun.setId(-1);

@@ -15,7 +15,7 @@ public class userPanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public userPanel(mainFrame frame, Permission perm) 
+    public userPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;

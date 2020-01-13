@@ -15,7 +15,7 @@ public class graficPanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public graficPanel(mainFrame frame, Permission perm) 
+    public graficPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
@@ -23,7 +23,7 @@ public class graficPanel extends JPanel implements ActionListener
         setLayout(new BorderLayout());
         add = new JButton("Dodaj Wizyte");
         add.addActionListener(this);
-        if(perm != Permission.VET && perm != Permission.TECHNICIAN && perm != Permission.CLIENT)
+        if(perm != Permision.VET && perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
         {   
             fun = Function.DELETE;
             fun.setId(-1);

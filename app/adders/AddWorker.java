@@ -93,7 +93,7 @@ public class AddWorker extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imię"); 
+        name = new JLabel("Imie"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
@@ -130,13 +130,13 @@ public class AddWorker extends JFrame implements ActionListener{
         tmno.setLocation(200, 200); 
         c.add(tmno); 
   
-        gender = new JLabel("Płeć"); 
+        gender = new JLabel("Plec"); 
         gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
         gender.setSize(100, 20); 
         gender.setLocation(100, 250); 
         c.add(gender); 
   
-        male = new JRadioButton("Męczyzna"); 
+        male = new JRadioButton("Mezczyzna"); 
         male.setFont(new Font("Arial", Font.PLAIN, 15)); 
         male.setSelected(false); 
         male.setSize(120, 20); 
@@ -190,7 +190,7 @@ public class AddWorker extends JFrame implements ActionListener{
         tsalary.setLocation(200, 350); 
         c.add(tsalary);
         
-        occupation = new JLabel("Zawód"); 
+        occupation = new JLabel("Zawod"); 
         occupation.setFont(new Font("Arial", Font.PLAIN, 20)); 
         occupation.setSize(100, 20); 
         occupation.setLocation(100, 400); 
@@ -210,7 +210,7 @@ public class AddWorker extends JFrame implements ActionListener{
         sub.addActionListener(this); 
         c.add(sub); 
   
-        reset = new JButton("Wyczyść"); 
+        reset = new JButton("Wyczysc"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(270, 450); 

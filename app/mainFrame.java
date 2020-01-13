@@ -2,6 +2,7 @@ package app;
 
 import javax.swing.*;
 import java.awt.*;
+import java.security.acl.Permission;
 
 public class mainFrame extends JFrame
 {
@@ -14,16 +15,16 @@ public class mainFrame extends JFrame
     JButton myDataJButton;
     private static final String admin = "admin";
     private static final String employees = "pracownicy";
-    private static final String services = "usługi";
+    private static final String services = "uslugi";
     private static final String clients = "klienci";
-    private static final String animals = "zwierzęta";
+    private static final String animals = "zwierzeta";
     private static final String visits = "wizyty";
     private static final String grafic = "grafik";
     private static final String vaccinations = "szczepienia";
     private static final String myData = "informacje";
     DataBaseConnection dataBase;
-    Permission perm;
-    public mainFrame(Permission perm)
+    Permision perm;
+    public mainFrame(Permision perm)
     {
         this.perm = perm;
         //perm.setId(1);
@@ -46,7 +47,7 @@ public class mainFrame extends JFrame
         return dataBase;
     }
 
-    private void addCards(Permission permissions)
+    private void addCards(Permision permissions)
     {
         switch (permissions) {
             case ADMIN:
@@ -66,11 +67,13 @@ public class mainFrame extends JFrame
                 cards.addTab(visits, new visitPanel(this, permissions));
                 cards.addTab(animals, new petPanel(this, permissions));
                 cards.addTab(grafic, new graficPanel(this,permissions));
-                cards.addTab("Moje dane", new Info(this.getDataBase().select_info(permissions)));
                 //cards.addTab(myData, null);
                 //cards.add(myDataJButton);
             default:
                 break;
+        }
+        if(permissions==Permision.VET || permissions==Permision.CLIENT || permissions==Permision.TECHNICIAN) {
+        	cards.addTab(myData, new Info(this.getDataBase().select_info(permissions)));
         }
     }
 }

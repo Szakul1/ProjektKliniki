@@ -15,7 +15,7 @@ public class visitPanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public visitPanel(mainFrame frame, Permission perm) 
+    public visitPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
@@ -23,7 +23,7 @@ public class visitPanel extends JPanel implements ActionListener
         setLayout(new BorderLayout());
         add = new JButton("Dodaj Wizyte");
         add.addActionListener(this);
-        if(perm != Permission.TECHNICIAN && perm != Permission.CLIENT)
+        if(perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
         {   
             fun = Function.DELETE;
             fun.setId(-1);

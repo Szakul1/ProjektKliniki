@@ -23,7 +23,7 @@ public class login extends JFrame implements ActionListener
     {
         dataBase = new DataBaseConnection();
         login = new JLabel("Login: ");
-        password = new JLabel("Hasło: ");
+        password = new JLabel("Haslo: ");
         loginField = new JTextField(20);
         passwordField = new JPasswordField(20);
         loginButton = new JButton("Login");

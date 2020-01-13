@@ -8,3 +8,5 @@ walidacja wartosci 9 cyfr dla numeru;//
 transakcja na podwyzke//
 triggery?
 indeksy?
+zrobic results dla admina
+zrobic backup bazy i przycisk

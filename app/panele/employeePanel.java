@@ -15,7 +15,7 @@ public class employeePanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public employeePanel(mainFrame frame, Permission perm) 
+    public employeePanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
@@ -28,7 +28,7 @@ public class employeePanel extends JPanel implements ActionListener
         fun.setId(-1);
         add(new JPanel().add(add), BorderLayout.EAST);
 
-        select = new myPanel("pracownicy",new String[]{"id","imię","nazwisko","numer_tel","data_urodzenia","pensja","zawod"},frame, fun);
+        select = new myPanel("pracownicy",new String[]{"id","imie","nazwisko","numer_tel","data_urodzenia","pensja","zawod"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 

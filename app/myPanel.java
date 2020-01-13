@@ -29,7 +29,7 @@ public class myPanel extends JPanel implements ActionListener
     String column;
     public myPanel(String table, String[] names, mainFrame frame, Function fun)
     {
-        column = table.equals("zwierzęta") ? "id_zwierzęcia" : "id";
+        column = table.equals("zwierzeta") ? "id_zwierzecia" : "id";
         this.fun = fun;
         this.table=table;
         this.names = names;

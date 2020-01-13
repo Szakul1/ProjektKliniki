@@ -29,7 +29,7 @@ public class makeVist extends JFrame implements ActionListener {
     Calendar calendar;
     Calendar calendar2;
     JButton confirm;
-    Permission perm;
+    Permision perm;
     JComboBox<String> pickTime;
     final SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
     final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
@@ -38,22 +38,22 @@ public class makeVist extends JFrame implements ActionListener {
         this.frame = frame;
         this.perm = perm;
 
-        services = new JComboBox<String>(frame.getDataBase().selectColumn("usługi", new String[] { "nazwa" }, "")[0]);
+        services = new JComboBox<String>(frame.getDataBase().selectColumn("uslugi", new String[] { "nazwa" }, "")[0]);
         services.setSelectedIndex(-1);
         services.addActionListener(this);
         workers = new JComboBox<String>();
         workers.setPrototypeDisplayValue("             ");
         pickTime = new JComboBox<String>();
         pickTime.setPrototypeDisplayValue("             ");
-        chooseService = new JLabel("Wybierz usługę");
+        chooseService = new JLabel("Wybierz usluge");
         chooseWorker = new JLabel("Wybierz pracownika");
         chooseDate = new JLabel("Wybierz date");
-        chooseAnimal = new JLabel("Wybierz zwierzę");
+        chooseAnimal = new JLabel("Wybierz zwierze");
         chooseClient = new JLabel("ID klienta");
         chooseTime = new JLabel("Wybierz czas");
         idField = new JTextField(10);
         idField.addActionListener(this);
-        confirm = new JButton("Zapisz się");
+        confirm = new JButton("Zapisz sie");
         confirm.addActionListener(this);
 
         picker = new JXDatePicker();
@@ -97,9 +97,9 @@ public class makeVist extends JFrame implements ActionListener {
         add(layout);
     }
 
-    private void createPermisson(Permission perm) {
-        if (perm.equals(Permission.CLIENT))
-            animals = new JComboBox<>(frame.getDataBase().selectColumn("zwierzęta", new String[] { "imię" },
+    private void createPermisson(Permision perm) {
+        if (perm.equals(Permision.CLIENT))
+            animals = new JComboBox<>(frame.getDataBase().selectColumn("zwierzeta", new String[] { "imie" },
                     "Where id_klienta=" + perm.getId())[0]);
         else {
             animals = new JComboBox<>();
@@ -119,7 +119,7 @@ public class makeVist extends JFrame implements ActionListener {
         String[] help2;
         //String procedure;
         if (e.getSource().equals(idField)) {
-            names = frame.getDataBase().selectColumn("zwierzęta", new String[] { "id", "imię" },
+            names = frame.getDataBase().selectColumn("zwierzeta", new String[] { "id", "imie" },
                     "Where id=" + idField.getText());
             model = new DefaultComboBoxModel<>(names[1]);
             idAnimal = names[0];

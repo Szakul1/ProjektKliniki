@@ -34,13 +34,13 @@ public class DataBaseConnection {
     
     }
 
-    public ArrayList<String> select_info(Permission perm) {
+    public ArrayList<String> select_info(Permision perm) {
     	ArrayList<String> results = new ArrayList();
     	String table = "";
-    	if(perm == Permission.CLIENT) {
+    	if(perm == Permision.CLIENT) {
     		table = "klienci";
     	}
-    	else if(perm == Permission.VET || perm == Permission.TECHNICIAN) {
+    	else if(perm == Permision.VET || perm == Permision.TECHNICIAN) {
     		table = "pracownicy";
     	}
     	String id = Integer.toString(perm.getId());
@@ -257,7 +257,7 @@ public class DataBaseConnection {
         return result;
     }
     
-    void call(String query) throws SQLException {
+    public void call(String query) throws SQLException {
     	stmt.executeQuery(query);
     }
     

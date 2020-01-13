@@ -15,7 +15,7 @@ public class servicePanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
 
-    public servicePanel(mainFrame frame, Permission perm) 
+    public servicePanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
@@ -23,7 +23,7 @@ public class servicePanel extends JPanel implements ActionListener
         setLayout(new BorderLayout());
         add = new JButton("Dodaj Usluge");
         add.addActionListener(this);
-        if(perm != Permission.TECHNICIAN && perm != Permission.CLIENT)
+        if(perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
         {   
             fun = Function.DELETE;
             fun.setId(-1);
