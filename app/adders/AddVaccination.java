@@ -1,4 +1,5 @@
-package app;
+package app.adders;
+import app.*;
 
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
@@ -31,7 +32,7 @@ public class AddVaccination extends JFrame implements ActionListener{
 	JTextField tfText0;
 	JTextField tfText2;
 
-	AddVaccination(mainFrame frame){
+	public AddVaccination(mainFrame frame){
 		this.frame = frame;
 		
 		GridBagLayout gbPanel0 = new GridBagLayout();

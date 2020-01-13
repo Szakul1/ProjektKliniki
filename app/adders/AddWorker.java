@@ -1,4 +1,5 @@
-package app;
+package app.adders;
+import app.*;
 
 import java.awt.Container;
 import java.awt.Font;
