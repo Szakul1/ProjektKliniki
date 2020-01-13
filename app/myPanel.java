@@ -15,7 +15,6 @@ public class myPanel extends JPanel implements ActionListener
      */
     private static final long serialVersionUID = 1L;
 
-    private static final String column = "id";
     JLabel chooseColumn;
     JLabel writeCondition;
     String[] names;
@@ -27,12 +26,14 @@ public class myPanel extends JPanel implements ActionListener
     mainFrame frame;
     String table;
     Function fun;
+    String column;
     public myPanel(String table, String[] names, mainFrame frame, Function fun)
     {
+        column = table.equals("zwierzęta") ? "id_zwierzęcia" : "id";
         this.fun = fun;
-        this.table = table;
+        this.table=table;
         this.names = names;
-        this.frame = frame;
+        this.frame= frame;
         help = new ArrayList<>();
         columns = new ArrayList<>();
         condition = new ArrayList<>();
@@ -103,8 +104,8 @@ public class myPanel extends JPanel implements ActionListener
             }
             if(fun.getId() != -1)
             {
-                information.add(table.equals("zwierzęta") ? "id_zwierzęcia" : "id");
-                information.add(fun.getId()+"");
+                information.add(column);
+                information.add(fun.getId()+""); //wbudowany select
             }
             frame.getDataBase().select(table,information.toArray(new String[0]),names, fun);
         }
