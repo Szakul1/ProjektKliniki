@@ -1,13 +1,11 @@
-[
+ [
     {
         "imie": "Malwina",
         "nazwisko": "Patora",
         "numer_tel": "847432377",
         "data_urodzenia": "14-10-1953",
         "pensja": 3505,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Jan",
@@ -15,9 +13,7 @@
         "numer_tel": "330763102",
         "data_urodzenia": "8-7-2000",
         "pensja": 3069,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Kaja",
@@ -25,9 +21,7 @@
         "numer_tel": "870645868",
         "data_urodzenia": "11-7-1974",
         "pensja": 1277,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Sonia",
@@ -35,9 +29,7 @@
         "numer_tel": "329141930",
         "data_urodzenia": "8-6-1971",
         "pensja": 2559,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Marcelina",
@@ -45,9 +37,7 @@
         "numer_tel": "491852312",
         "data_urodzenia": "16-3-1950",
         "pensja": 4681,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Sandra",
@@ -55,9 +45,7 @@
         "numer_tel": "707700900",
         "data_urodzenia": "21-6-1951",
         "pensja": 4256,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Fabian",
@@ -65,9 +53,7 @@
         "numer_tel": "626517690",
         "data_urodzenia": "14-10-1951",
         "pensja": 3662,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Tobiasz",
@@ -75,9 +61,7 @@
         "numer_tel": "212771677",
         "data_urodzenia": "19-4-1987",
         "pensja": 2604,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Patryk",
@@ -85,9 +69,7 @@
         "numer_tel": "568156663",
         "data_urodzenia": "15-3-1970",
         "pensja": 3673,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Artur",
@@ -95,9 +77,7 @@
         "numer_tel": "253645867",
         "data_urodzenia": "11-4-1942",
         "pensja": 2674,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Iwona",
@@ -105,9 +85,7 @@
         "numer_tel": "490695338",
         "data_urodzenia": "2-9-2000",
         "pensja": 4366,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Malwina",
@@ -115,9 +93,7 @@
         "numer_tel": "211864100",
         "data_urodzenia": "28-1-1946",
         "pensja": 1497,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Tadeusz",
@@ -125,9 +101,7 @@
         "numer_tel": "457358382",
         "data_urodzenia": "12-7-1989",
         "pensja": 2965,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Wojciech",
@@ -135,9 +109,7 @@
         "numer_tel": "976226919",
         "data_urodzenia": "17-9-1967",
         "pensja": 3931,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Bianka",
@@ -145,9 +117,7 @@
         "numer_tel": "147236315",
         "data_urodzenia": "28-3-1943",
         "pensja": 3162,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Olaf",
@@ -155,9 +125,7 @@
         "numer_tel": "114779682",
         "data_urodzenia": "15-8-1988",
         "pensja": 2521,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Arkadiusz",
@@ -165,9 +133,7 @@
         "numer_tel": "975392404",
         "data_urodzenia": "21-8-1974",
         "pensja": 1610,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Antoni",
@@ -175,9 +141,7 @@
         "numer_tel": "850152871",
         "data_urodzenia": "17-1-1964",
         "pensja": 3712,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Maurycy",
@@ -185,9 +149,7 @@
         "numer_tel": "656518132",
         "data_urodzenia": "7-10-1967",
         "pensja": 3175,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Sonia",
@@ -195,9 +157,7 @@
         "numer_tel": "923551395",
         "data_urodzenia": "12-5-1955",
         "pensja": 4084,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Gabriel",
@@ -205,9 +165,7 @@
         "numer_tel": "160457874",
         "data_urodzenia": "19-5-1958",
         "pensja": 1245,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Grzegorz",
@@ -215,9 +173,7 @@
         "numer_tel": "236437994",
         "data_urodzenia": "7-7-1961",
         "pensja": 4190,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Filip",
@@ -225,9 +181,7 @@
         "numer_tel": "799793218",
         "data_urodzenia": "3-6-1945",
         "pensja": 1705,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Adam",
@@ -235,9 +189,7 @@
         "numer_tel": "852943631",
         "data_urodzenia": "2-2-1944",
         "pensja": 1686,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Adrianna",
@@ -245,9 +197,7 @@
         "numer_tel": "343523566",
         "data_urodzenia": "9-2-1941",
         "pensja": 3369,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Artur",
@@ -255,9 +205,7 @@
         "numer_tel": "420698773",
         "data_urodzenia": "16-3-1974",
         "pensja": 4194,
-        "zawod": [
-            "weterynarz"
-        ]
+        "zawod": "weterynarz"
     },
     {
         "imie": "Jozef",
@@ -265,9 +213,7 @@
         "numer_tel": "849410780",
         "data_urodzenia": "24-2-2001",
         "pensja": 4197,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Dominik",
@@ -275,9 +221,7 @@
         "numer_tel": "475410412",
         "data_urodzenia": "17-7-1969",
         "pensja": 4935,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     },
     {
         "imie": "Patryk",
@@ -285,8 +229,6 @@
         "numer_tel": "419543629",
         "data_urodzenia": "17-1-1959",
         "pensja": 2804,
-        "zawod": [
-            "technik"
-        ]
+        "zawod": "technik"
     }
 ]
