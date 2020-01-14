@@ -21,7 +21,7 @@
     },
     {
         "imie": "Kaja",
-        "nazwisko": "Opyrcha�",
+        "nazwisko": "Opyrchadz",
         "numer_tel": "870645868",
         "data_urodzenia": "11-7-1974",
         "pensja": 1277,
@@ -71,7 +71,7 @@
     },
     {
         "imie": "Tobiasz",
-        "nazwisko": "Staro�ga",
+        "nazwisko": "Starodga",
         "numer_tel": "212771677",
         "data_urodzenia": "19-4-1987",
         "pensja": 2604,
@@ -131,7 +131,7 @@
     },
     {
         "imie": "Wojciech",
-        "nazwisko": "Z�otnik",
+        "nazwisko": "Zrotnik",
         "numer_tel": "976226919",
         "data_urodzenia": "17-9-1967",
         "pensja": 3931,
@@ -141,7 +141,7 @@
     },
     {
         "imie": "Bianka",
-        "nazwisko": "Roma�czyk",
+        "nazwisko": "Romanczyk",
         "numer_tel": "147236315",
         "data_urodzenia": "28-3-1943",
         "pensja": 3162,
@@ -260,7 +260,7 @@
         ]
     },
     {
-        "imie": "J�zef",
+        "imie": "Jozef",
         "nazwisko": "Bieszke",
         "numer_tel": "849410780",
         "data_urodzenia": "24-2-2001",
