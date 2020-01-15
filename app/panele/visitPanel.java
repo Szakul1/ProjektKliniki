@@ -17,10 +17,12 @@ public class visitPanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
     JPanel panel;
+    Permision perm;
 
     public visitPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
+        this.perm = perm;
         Function fun;
 
         setLayout(new BorderLayout());
@@ -47,6 +49,6 @@ public class visitPanel extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         if(e.getActionCommand().equals("Dodaj Wizyte"))
-            new AddClient(frame);
+            new makeVist(frame, perm);
     }
 }
