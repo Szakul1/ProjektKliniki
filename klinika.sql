@@ -61,8 +61,7 @@ CREATE TABLE wizyty (
     id_pracownika int NOT NULL,
     id_zwierzecia int NOT NULL,
     termin timestamp NOT NULL CHECK (TIME(termin) BETWEEN '7:00' AND '17:00'),
-    cel_wizyty varchar(30) NOT NULL,
-    oplata int NOT NULL CHECK (oplata>=0)
+    cel_wizyty varchar(30) NOT NULL
 ) COMMENT 'tabela przechowująca odbyte oraz zaplanowane wizyty';
 
 -- Table: zwierzeta
