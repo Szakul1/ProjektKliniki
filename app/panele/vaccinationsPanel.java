@@ -16,6 +16,7 @@ public class vaccinationsPanel extends JPanel implements ActionListener
     myPanel select;
     JButton add;
     mainFrame frame;
+    JPanel panel;
 
     public vaccinationsPanel(mainFrame frame, Permision perm) 
     {
@@ -29,7 +30,9 @@ public class vaccinationsPanel extends JPanel implements ActionListener
         {   
             fun = Function.DELETE;
             fun.setId(-1);
-            add(new JPanel().add(add), BorderLayout.EAST);
+            panel = new JPanel();
+            panel.add(add);
+            add(panel, BorderLayout.EAST);
         }
         else
         {

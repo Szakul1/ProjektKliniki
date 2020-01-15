@@ -17,6 +17,7 @@ public class clientPanel extends JPanel implements ActionListener
     myPanel select;
     JButton add;
     mainFrame frame;
+    JPanel panel;
 
     public clientPanel(mainFrame frame, Permision perm) 
     {
@@ -30,14 +31,16 @@ public class clientPanel extends JPanel implements ActionListener
         {   
             fun = Function.DELETE;
             fun.setId(-1);
-            add(new JPanel().add(add), BorderLayout.EAST);
+            panel = new JPanel();
+            panel.add(add);
+            add(panel, BorderLayout.EAST);
         }
         else
         {
             fun = Function.SELECT;
             fun.setId(perm.getId());
         }
-        select = new myPanel("klienci",new String[]{"id","imię","nazwisko","numer_tel"},frame, fun);
+        select = new myPanel("klienci",new String[]{"id","imie","nazwisko","numer_tel"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 

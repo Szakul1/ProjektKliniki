@@ -16,6 +16,7 @@ public class userPanel extends JPanel implements ActionListener
     myPanel select;
     JButton add;
     mainFrame frame;
+    JPanel panel;
 
     public userPanel(mainFrame frame, Permision perm) 
     {
@@ -27,7 +28,9 @@ public class userPanel extends JPanel implements ActionListener
         add.addActionListener(this);
         fun = Function.DELETE;
         fun.setId(-1);
-        add(new JPanel().add(add), BorderLayout.EAST);
+        panel = new JPanel();
+        panel.add(add);
+        add(panel, BorderLayout.EAST);
 
         select = new myPanel("zwierzeta",new String[]{"imie","data_urodzenia","gatunek","waga","plec","kastrowane"},frame, fun);
         add(select, BorderLayout.CENTER);
