@@ -6,14 +6,14 @@ DECLARE rozpoczecie,zakonczenie time;
 SET @@lc_time_names = 'pl_PL';
 SET rozpoczecie = (SELECT rozpoczecie FROM grafik WHERE id_pracownika=idpracownika AND dzien=(SELECT DAYNAME(terminpod) dayname));
 SET zakonczenie = (SELECT zakonczenie FROM grafik WHERE id_pracownika=idpracownika AND dzien=(SELECT DAYNAME(terminpod) dayname));
-WHILE rozpoczecie < zakonczenie DO
-	IF NOT EXISTS (SELECT termin FROM wizyty WHERE DAY(termin)=DAY(terminpod) AND TIME(termin) = rozpoczecie) THEN
-		SELECT rozpoczecie;
-        SET @@lc_time_names = 'en_US';
-        LEAVE procedura;
-    END IF;
-    SET rozpoczecie = ADDTIME(rozpoczecie,"20:00");
-END WHILE;
+SET @zajete := (SELECT TIME(termin) FROM wizyty WHERE termin=terminpod AND TIME(termin) BETWEEN rozpoczecie AND zakonczenie);
+WITH RECURSIVE cte (t) AS
+(
+	SELECT rozpoczecie 
+	UNION 
+	SELECT ADDTIME(t,"20:00") FROM cte WHERE rozpoczecie <= zakonczenie
+)
+SELECT * FROM cte WHERE t NOT IN (@zajete);
 SET @@lc_time_names = 'en_US';
 end $$
 delimiter ;
