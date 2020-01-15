@@ -1,7 +1,10 @@
+
 package app;
 
 import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Date;
+import javax.swing.JOptionPane;
+
 import java.util.*;
 
 public class DataBaseConnection {
@@ -105,14 +108,19 @@ public class DataBaseConnection {
             columns = columns.substring(0, columns.length()-1);
             String testquery = "Select " + columns +" From " + table +" "+ condition;
             ResultSet res = stmt.executeQuery(testquery);
-            String[] row = new String[column.length];
             while (res.next()) 
             {
+                String[] row = new String[column.length];
                 for(int i=0; i<column.length; i++)
                     row[i] = res.getString(column[i]);
                 results.add(row);
             }
-            return results.toArray(new String[0][]);
+            if(results.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
+                return new String[][]{};
+            }
+            return results.toArray(new String[][]{});
         }
         catch(SQLException ex)
         {
@@ -208,21 +216,26 @@ public class DataBaseConnection {
         }
     }
 
-    public String[][] callProcedure(String name, String values[], int columnNumber)
+    public String[][] callProcedure(String name, String value[], int columnNumber)
     {
         CallableStatement cstmt;
         List<String[]> results = new ArrayList<>();
         try {
             String help="";
-            /*
-            for(String s : values)
-                help+=s+",";
-            
-            help = help.substring(0, help.length()-1);
-            */
-            
-            String SQL = "call "+name+" ('"+help+"')";
-            cstmt = conn.prepareCall(SQL);
+            String SQL;
+            if(value.length==1)
+            {
+                SQL = "call "+name+" ('"+value[0]+"')";
+                cstmt = conn.prepareCall(SQL);
+            }
+            else
+            {
+                value[1]="1999-06-01";
+                SQL = "{call " + name + " (?,?)}";
+                cstmt = conn.prepareCall(SQL);
+                cstmt.setInt(1, Integer.parseInt(value[0]));
+                cstmt.setDate(2, Date.valueOf(value[1]));
+            }
             ResultSet res = cstmt.executeQuery();
             while (res.next()) 
             {
@@ -230,6 +243,11 @@ public class DataBaseConnection {
                 for(int i=1; i<=columnNumber; i++)
                     row[i-1] = res.getString(i);
                 results.add(row);
+            }
+            if(results.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
+                return new String[][]{new String[]{}};
             }
             return results.toArray(new String[results.size()][]);
         }

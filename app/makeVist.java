@@ -38,7 +38,11 @@ public class makeVist extends JFrame implements ActionListener {
         this.frame = frame;
         this.perm = perm;
 
-        services = new JComboBox<String>(frame.getDataBase().selectColumn("uslugi", new String[] { "nazwa" }, "")[0]);
+        services = new JComboBox<String>();
+        for (String[] s : frame.getDataBase().selectColumn("uslugi", new String[] { "nazwa" }, "")) {
+            services.addItem(s[0]);
+        }
+        
         services.setSelectedIndex(-1);
         services.addActionListener(this);
         workers = new JComboBox<String>();
@@ -83,7 +87,7 @@ public class makeVist extends JFrame implements ActionListener {
 
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -119,22 +123,32 @@ public class makeVist extends JFrame implements ActionListener {
         String[] help2;
         //String procedure;
         if (e.getSource().equals(idField)) {
-            names = frame.getDataBase().selectColumn("zwierzeta", new String[] { "id", "imie" },
-                    "Where id=" + idField.getText());
-            model = new DefaultComboBoxModel<>(names[1]);
-            idAnimal = names[0];
+            names = frame.getDataBase().selectColumn("zwierzeta", new String[] { "id_zwierzecia", "imie" },
+                    "Where id_klienta=" + idField.getText());
+            if(names.length==0)
+                return;
+            help2 = new String[names.length];
+            idAnimal= new String[names.length];
+            for (int i = 0; i < names.length; i++) {
+                help2[i] = names[i][0];
+                idAnimal[i] = names[i][1];
+            }
+
+            model = new DefaultComboBoxModel<>(help2);
             animals.setModel(model);
             pack();
         }
         if (e.getSource().equals(services)) {
             names = frame.getDataBase().callProcedure("wyswietlPracownikow",
             new String[] { services.getSelectedItem().toString() }, 3);
+            if(names.length==0)
+                return;
             idWorker = names[0];
             help2 = new String[names.length];
             for (int i = 0; i < names.length; i++) {
                 help2[i] = "";
                 help2[i] += names[i][1] + " ";
-                help2[i] += names[i][1];
+                help2[i] += names[i][2];
             }
             model = new DefaultComboBoxModel<>(help2);
             workers.setModel(model);
@@ -148,7 +162,7 @@ public class makeVist extends JFrame implements ActionListener {
                 new String[]{idWorker[workers.getSelectedIndex()], 
                     format.format(picker.getDate())}, 1)[0]);
             pickTime.setModel(model);
-
+            
             pack();
         }
         if (e.getActionCommand().equals("Zapisz się") && picker.getDate() != null && services.getSelectedIndex() != -1

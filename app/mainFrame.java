@@ -76,4 +76,7 @@ public class mainFrame extends JFrame
         	cards.addTab(myData, new Info(this.getDataBase().select_info(permissions)));
         }
     }
+    public static void main(String[] args) {
+        new mainFrame(Permision.ADMIN);
+    }
 }

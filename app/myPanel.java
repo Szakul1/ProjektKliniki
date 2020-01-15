@@ -30,13 +30,16 @@ public class myPanel extends JPanel implements ActionListener
     String[] animalId;
     public myPanel(String table, String[] names, mainFrame frame, Function fun)
     {
-        if(table.equals("zwierzęta"))
-            column = "id_klienta";
-        if(table.equals("wizyty"))
+        if(fun.getId() != -1)
         {
-            animalId = frame.getDataBase().selectColumn("zwierzeta",
-            new String[]{"id_zwierzecia"}, "Where id_zwirzecia="+fun.getId())[0];
-            column = "id_zwirzęcia";
+            if(table.equals("zwierzęta"))
+                column = "id_klienta";
+            if(table.equals("wizyty"))
+            {
+                animalId = frame.getDataBase().selectColumn("zwierzeta",
+                new String[]{"id_zwierzecia"}, "Where id_zwierzecia="+fun.getId())[0];
+                column = "id_zwierzecia";
+            }
         }
         this.fun = fun;
         this.table=table;
@@ -68,6 +71,7 @@ public class myPanel extends JPanel implements ActionListener
         if(fun.getId() != -1)
             comboBox.removeItem(column);
         columns.add(comboBox);
+        columns.get(columns.size()-1).setSelectedIndex(-1);
 
         columns.get(columns.size()-1).addActionListener(this);
         condition.add(new JTextField(20));
