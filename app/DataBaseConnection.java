@@ -160,7 +160,6 @@ public class DataBaseConnection {
     }
     
     public void giveRaise(int percent) {
-    	 public void giveRaise(int percent) {
     	
     	List<Integer> results = new ArrayList<Integer>();
     	String testquery = "Select pensja From pracownicy";
@@ -190,21 +189,26 @@ public class DataBaseConnection {
     		try {
 				updateSalary = conn.prepareStatement(updateString);
 				updateSalary.executeUpdate();
-				conn.commit();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				if(conn!=null) {
-					try {
-						System.err.print("Transaction is being rolled back");
-						conn.rollback();
-					} catch(SQLException excep) {
-						e.printStackTrace();
-					}
+			}
+    	}
+    	
+    	try {
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			if(conn!=null) {
+				try {
+					System.err.print("Transaction is being rolled back");
+					conn.rollback();
+				} catch(SQLException excep) {
+					e.printStackTrace();
 				}
 			}
-    	
-    	}
+		}
     	
     	try {
 			conn.setAutoCommit(true);
