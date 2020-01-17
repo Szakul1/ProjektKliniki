@@ -77,7 +77,7 @@ public class DataBaseConnection {
     	Process p =null;
     	try {
     		Runtime runtime = Runtime.getRuntime();
-    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe -uroot -pparyta22 --add-drop-database -Bklinika -rC:/Users/Public/Music/data.sql");
+    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe -uroot -p --add-drop-database -Bklinika -rC:/Users/Public/Music/data.sql");
     		int complete = p.waitFor();
     		if(complete==0) {
     			System.out.println("backup");
