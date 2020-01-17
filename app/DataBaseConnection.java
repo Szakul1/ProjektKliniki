@@ -73,7 +73,29 @@ public class DataBaseConnection {
     }
     
     
-    
+    public void backup() {
+    	Process p =null;
+    	try {
+    		Runtime runtime = Runtime.getRuntime();
+    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe -uroot -pparyta22 --add-drop-database -Bklinika -rC:/Users/Public/Music/data.sql");
+    		int complete = p.waitFor();
+    		if(complete==0) {
+    			System.out.println("backup");
+    		}
+    		else {
+    			int len;
+    			if ((len = p.getErrorStream().available()) > 0) {
+    			  byte[] buf = new byte[len];
+    			  p.getErrorStream().read(buf);
+    			  System.err.println("Command error:\t\""+new String(buf)+"\"");
+    			}
+    			System.out.println("no backup");
+    		}
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    }
     
     
     public void select(String table, String[] conditions, String[] columns, Function fun)
