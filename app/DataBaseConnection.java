@@ -160,7 +160,60 @@ public class DataBaseConnection {
     }
     
     public void giveRaise(int percent) {
+    	 public void giveRaise(int percent) {
     	
+    	List<Integer> results = new ArrayList<Integer>();
+    	String testquery = "Select pensja From pracownicy";
+        ResultSet res = null;
+		try {
+			res = stmt.executeQuery(testquery);
+			while(res.next()) {
+				results.add(res.getInt("pensja"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+    	
+    	PreparedStatement updateSalary = null;
+    	try {
+			conn.setAutoCommit(false);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	for(int s:results) {
+    		int raise = s+s*percent/100;
+    		String updateString = 
+    				"Update pracownicy Set pensja=" + raise + " Where pensja=" + s;
+    		try {
+				updateSalary = conn.prepareStatement(updateString);
+				updateSalary.executeUpdate();
+				conn.commit();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				if(conn!=null) {
+					try {
+						System.err.print("Transaction is being rolled back");
+						conn.rollback();
+					} catch(SQLException excep) {
+						e.printStackTrace();
+					}
+				}
+			}
+    	
+    	}
+    	
+    	try {
+			conn.setAutoCommit(true);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    		
+    }
     	List<Integer> results = new ArrayList();
     	String testquery = "Select pensja From pracownicy";
         ResultSet res = null;
