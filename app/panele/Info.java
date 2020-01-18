@@ -15,9 +15,9 @@ public class Info extends JPanel{
 	JLabel lbName;
 	JLabel lbSurname;
 	JLabel lbTelephone;
-	JTextField tfTname;
-	JTextField tfTsurname;
-	JTextField tfTphone;
+	JLabel tfTname;
+	JLabel tfTsurname;
+	JLabel tfTphone;
 
 	JLabel btName;
 	JLabel btSurname;
@@ -25,14 +25,14 @@ public class Info extends JPanel{
 	JLabel btBirtday;
 	JLabel btSalary;
 	JLabel btOccupation;
-	JTextField tfT_name;
-	JTextField tfT_surname;
-	JTextField tfT_phone;
-	JTextField tfT_birth;
-	JTextField tfT_salary;
-	JTextField tfT_occupation;
+	JLabel tfT_name;
+	JLabel tfT_surname;
+	JLabel tfT_phone;
+	JLabel tfT_birth;
+	JLabel tfT_salary;
+	JLabel tfT_occupation;
 
-	public Info(ArrayList<String> data){
+	public Info(ArrayList<String> data) {
 		
 		
 	if(data.get(0).equals("klienci")) {
@@ -76,7 +76,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( lbTelephone, gbcPanel0 );
 		add( lbTelephone );
 
-		tfTname = new JTextField( );
+		tfTname = new JLabel(data.get(1));
 		gbcPanel0.gridx = 9;
 		gbcPanel0.gridy = 2;
 		gbcPanel0.gridwidth = 5;
@@ -88,7 +88,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfTname, gbcPanel0 );
 		add( tfTname );
 
-		tfTsurname = new JTextField( );
+		tfTsurname = new JLabel(data.get(2));
 		gbcPanel0.gridx = 9;
 		gbcPanel0.gridy = 6;
 		gbcPanel0.gridwidth = 5;
@@ -100,7 +100,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfTsurname, gbcPanel0 );
 		add( tfTsurname );
 
-		tfTphone = new JTextField( );
+		tfTphone = new JLabel(data.get(3));
 		gbcPanel0.gridx = 9;
 		gbcPanel0.gridy = 10;
 		gbcPanel0.gridwidth = 5;
@@ -176,8 +176,8 @@ public class Info extends JPanel{
 		gbcPanel0.weightx = 1;
 		gbcPanel0.weighty = 0;
 		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( btBirtday, gbcPanel0 );
-		add( btBirtday );
+		gbPanel0.setConstraints( btSalary, gbcPanel0 );
+		add( btSalary );
 
 		btOccupation = new JLabel("Zawod");
 		gbcPanel0.gridx = 2;
@@ -188,10 +188,10 @@ public class Info extends JPanel{
 		gbcPanel0.weightx = 1;
 		gbcPanel0.weighty = 0;
 		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( btBirtday, gbcPanel0 );
-		add( btBirtday );
+		gbPanel0.setConstraints( btOccupation, gbcPanel0 );
+		add( btOccupation );
 		
-		tfT_name = new JTextField( );
+		tfT_name = new JLabel(data.get(1));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 1;
 		gbcPanel0.gridwidth = 5;
@@ -203,7 +203,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_name, gbcPanel0 );
 		add( tfT_name );
 
-		tfT_surname = new JTextField( );
+		tfT_surname = new JLabel(data.get(2));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 4;
 		gbcPanel0.gridwidth = 5;
@@ -215,7 +215,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_surname, gbcPanel0 );
 		add( tfT_surname );
 
-		tfT_phone = new JTextField( );
+		tfT_phone = new JLabel(data.get(3));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 7;
 		gbcPanel0.gridwidth = 5;
@@ -227,7 +227,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_phone, gbcPanel0 );
 		add( tfT_phone );
 
-		tfT_birth = new JTextField( );
+		tfT_birth = new JLabel(data.get(4));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 10;
 		gbcPanel0.gridwidth = 5;
@@ -239,7 +239,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_birth, gbcPanel0 );
 		add( tfT_birth );
 		
-		tfT_salary = new JTextField( );
+		tfT_salary = new JLabel(data.get(5));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 13;
 		gbcPanel0.gridwidth = 5;
@@ -251,9 +251,9 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_salary, gbcPanel0 );
 		add( tfT_salary );
 		
-		tfT_occupation = new JTextField( );
+		tfT_occupation = new JLabel(data.get(6));
 		gbcPanel0.gridx = 12;
-		gbcPanel0.gridy = 10;
+		gbcPanel0.gridy = 16;
 		gbcPanel0.gridwidth = 5;
 		gbcPanel0.gridheight = 2;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
