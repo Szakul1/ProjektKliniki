@@ -1,6 +1,5 @@
 package app.panele;
 import app.*;
-import app.adders.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -50,7 +49,7 @@ public class visitPanel extends JPanel implements ActionListener
         else {
         	fun = null;
         }
-        select = new myPanel("wizyty",new String[]{"id_pracownika","id_klienta","termin","cel_wizyty"},frame, fun);
+        select = new myPanel("wizyty",new String[]{"id_pracownika","id_zwierzecia","termin","cel_wizyty"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 
