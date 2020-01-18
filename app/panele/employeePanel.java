@@ -18,6 +18,7 @@ public class employeePanel extends JPanel implements ActionListener
     JButton add;
     mainFrame frame;
     JPanel panel;
+    JButton give;
 
     public employeePanel(mainFrame frame, Permision perm) 
     {
@@ -28,10 +29,14 @@ public class employeePanel extends JPanel implements ActionListener
         add = new JButton("Dodaj Pracownika");
         add.addActionListener(this);
         
+        give = new JButton("Daj Podwyzke");
+        give.addActionListener(this);
+        
         fun = Function.DELETE;
         fun.setId(-1);
         panel = new JPanel();
         panel.add(add);
+        panel.add(give);
         add(panel, BorderLayout.EAST);
 
         select = new myPanel("pracownicy",new String[]{"id","imie","nazwisko","numer_tel","data_urodzenia","pensja","zawod"},frame, fun);
@@ -41,8 +46,15 @@ public class employeePanel extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getActionCommand().equals("Dodaj Pracownika"))
+        if(e.getActionCommand().equals("Dodaj Pracownika")) {
             new AddWorker(frame);
+        }
+
+    	if(e.getActionCommand().equals("Daj Podwyzke")) {
+    		String pensja = JOptionPane.showInputDialog(this,"Dla pracownikow zarabiajacych mniej niz:");
+    		String podwyzka = JOptionPane.showInputDialog(this,"Wysokosc podwyzki w procentach");
+    		frame.getDataBase().giveRaise(Integer.parseInt(pensja),Integer.parseInt(podwyzka));
+    	}
     }
 }
 
