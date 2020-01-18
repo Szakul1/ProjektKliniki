@@ -32,13 +32,17 @@ public class myPanel extends JPanel implements ActionListener
     {
         if(fun.getId() != -1)
         {
-            if(table.equals("zwierzęta"))
+            if(table.equals("zwierzeta"))
                 column = "id_klienta";
             if(table.equals("wizyty"))
             {
-                animalId = frame.getDataBase().selectColumn("zwierzeta",
-                new String[]{"id_zwierzecia"}, "Where id_zwierzecia="+fun.getId())[0];
                 column = "id_zwierzecia";
+                String[][] help = frame.getDataBase().selectColumn("zwierzeta",
+                new String[]{"id_zwierzecia"}, "Where id_klienta="+fun.getId());
+                animalId = new String[help.length];
+                for (int i = 0; i < animalId.length; i++) {
+                    animalId[i] = help[i][0];
+                }
             }
         }
         this.fun = fun;
@@ -117,12 +121,20 @@ public class myPanel extends JPanel implements ActionListener
             if(fun.getId() != -1)
             {
                 // tu zrobic pelte po id w dla zwierzat
-                if(table.equals("zwierzęta"))
+                if(table.equals("wizyty"))
+                {
+                    String str = "(";
                     for (int i = 0; i < animalId.length; i++) {
-                        information.add(column);
-                        information.add(animalId[i]);
-                    }    
-                else
+                            str += column + "=" + animalId[i];
+                        if(i!=animalId.length-1)
+                            str+=" OR ";
+                        else 
+                            str+=")";
+                    }
+                    information.add("OR");
+                    information.add(str);
+                }
+                else if(!table.equals("grafik") && !table.equals("uslugi"))
                 {
                     information.add(column);
                     information.add(fun.getId()+""); //wbudowany select

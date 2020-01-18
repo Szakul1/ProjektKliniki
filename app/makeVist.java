@@ -104,8 +104,15 @@ public class makeVist extends JFrame implements ActionListener {
 
     private void createPermisson(Permision perm) {
         if (perm.equals(Permision.CLIENT))
-            animals = new JComboBox<>(frame.getDataBase().selectColumn("zwierzeta", new String[] { "imie" },
-                    "Where id_klienta=" + perm.getId())[0]);
+        {
+            String[][] help = frame.getDataBase().selectColumn("zwierzeta", new String[] { "imie" },
+                    "Where id_klienta=" + perm.getId());
+            String[] help2 = new String[help.length];           
+            for (int i = 0; i < help2.length; i++) {
+                help2[i] = help[i][0];
+            }
+            animals = new JComboBox<>(help2);
+        }
         else {
             animals = new JComboBox<>();
             animals.setPrototypeDisplayValue("            ");
@@ -177,7 +184,7 @@ public class makeVist extends JFrame implements ActionListener {
             pack();
         }
         if (e.getActionCommand().equals("Zapisz sie") && picker.getDate() != null && services.getSelectedIndex() != -1
-                && animals.getSelectedIndex() != -1) {
+                && animals.getSelectedIndex() != -1 && !pickTime.getSelectedItem().toString().equals("") ) {
             if (perm.equals(Permision.CLIENT))
                 help = Integer.toString(perm.getId());
             else

@@ -1,7 +1,6 @@
 package app;
 
 import java.sql.*;
-import java.sql.Date;
 import javax.swing.JOptionPane;
 
 import java.util.*;
@@ -80,8 +79,14 @@ public class DataBaseConnection {
         List<String[]> results = new ArrayList<String[]>();
         try
         {
-            String testquery = "Select * From " + table + parseConditions(conditions);
-            ResultSet res = stmt.executeQuery(testquery);
+            String testquery;
+            if(conditions[0]=="OR")
+                testquery = "Select * From " + table + (conditions.length > 2 ?
+                 parseConditions(Arrays.copyOfRange(conditions, 2, conditions.length)) + " AND " : 
+                 " Where ") + conditions[1];
+            else
+                testquery = "Select * From " + table + parseConditions(conditions);
+                ResultSet res = stmt.executeQuery(testquery);
             while (res.next()) 
             {
                 String[] row = new String[columns.length];
@@ -311,9 +316,14 @@ public class DataBaseConnection {
             }
             if(results.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Brak wolnych terminów w tym dniu",
-                                     "Informacja", JOptionPane.INFORMATION_MESSAGE);
-                return new String[][]{new String[]{}};
+                if(value[2].equals("1"))
+                    JOptionPane.showMessageDialog(null, "Brak wolnych terminów w tym dniu",
+                    "Informacja", JOptionPane.INFORMATION_MESSAGE);
+                else
+                    JOptionPane.showMessageDialog(null, "Brak wolnych terminów w tym dniu lub jestes juz zapisany wiecj niz dwa razy w tygodniu",
+                    "Informacja", JOptionPane.INFORMATION_MESSAGE);
+
+                return new String[][]{new String[]{""}};
             }
             return results.toArray(new String[results.size()][]);
         }
