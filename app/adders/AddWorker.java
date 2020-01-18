@@ -54,9 +54,9 @@ public class AddWorker extends JFrame implements ActionListener{
             "26", "27", "28", "29", "30", 
             "31" }; 
     private String months[] 
-        = { "Sty", "Lut", "Mar", "Kwi", 
-            "Maj", "Cze", "Lip", "Sie", 
-            "Wrz", "Paz", "Lis", "Gru" }; 
+        = { "1", "2", "3", "4", 
+            "5", "6", "7", "8", 
+            "9", "10", "11", "12" }; 
     private String years[] 
         = {"1940", "1941", "1942", "1943", 
            "1944", "1945", "1946", "1947",
@@ -82,7 +82,7 @@ public class AddWorker extends JFrame implements ActionListener{
     	this.frame = frame;
         setTitle("Formularz rejestracji"); 
         setBounds(300, 90, 900, 600); 
-        setDefaultCloseOperation(EXIT_ON_CLOSE); 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setResizable(false); 
   
         c = getContentPane(); 
@@ -125,7 +125,6 @@ public class AddWorker extends JFrame implements ActionListener{
         c.add(mno); 
   
         tmno = new JTextField();
-        tmno.setText("+48 ");
         tmno.setFont(new Font("Arial", Font.PLAIN, 15)); 
         tmno.setSize(140, 20); 
         tmno.setLocation(200, 200); 
@@ -232,7 +231,7 @@ public class AddWorker extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		boolean puste = false;
 		boolean zle = false;
-		if(e.getSource()==add) {
+		if(e.getSource()==sub) {
 			String name = tname.getText();
 			if(name.equals("")) {
 				puste = true;
@@ -273,7 +272,7 @@ public class AddWorker extends JFrame implements ActionListener{
 			if(syear.equals("")) {
 				puste = true;
 			}
-			String pension = salary.getText();
+			String pension = tsalary.getText();
 			if(pension.equals("")) {
 				puste = true;
 			}
@@ -291,23 +290,22 @@ public class AddWorker extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(this, "Zly numer telefonu");
 			}
 			else {
-				String birthday = sday + smonth + syear;
-				ArrayList<String> values = new ArrayList();
+				String birthday = syear + "-" + smonth + "-" + sday;
+				ArrayList<String> values = new ArrayList<String>();
 				values.add(name);
 				values.add(surname);
 				values.add(telephone);
-				values.add(sex);
 				values.add(birthday);
+				values.add(pension);
+				values.add(job);
 				
-				String[] wyniki = (String[]) values.toArray();
+				String[] wyniki = values.toArray(new String[values.size()]);
 				
-				frame.getDataBase().insert("klienci",wyniki);
+				frame.getDataBase().insert_columns("pracownicy",wyniki);
+				this.dispose();
 			}
 		}
 		
 	}
-	
-	public static void main(String[] args) {
-		//new AddWorker();
-	}
+
 }
