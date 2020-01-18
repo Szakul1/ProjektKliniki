@@ -26,29 +26,40 @@ public class visitPanel extends JPanel implements ActionListener
         Function fun;
 
         setLayout(new BorderLayout());
-        add = new JButton("Dodaj Wizyte");
-        add.addActionListener(this);
+      
         if(perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
         {   
             fun = Function.DELETE;
             fun.setId(-1);
             panel = new JPanel();
+            add = new JButton("Dodaj Wizyte");
+            add.addActionListener(this);
             panel.add(add);
             add(panel, BorderLayout.EAST);
         }
-        else
+        else if(perm == Permision.CLIENT)
         {
             fun = Function.SELECT;
             fun.setId(perm.getId());
+            panel = new JPanel();
+            add = new JButton("Zapisz sie na wizyte");
+            add.addActionListener(this);
+            panel.add(add);
+            add(panel,BorderLayout.EAST);
         }
-        select = new myPanel("wizyty",new String[]{"termin","cel_wizyty"},frame, fun);
+        else {
+        	fun = null;
+        }
+        select = new myPanel("wizyty",new String[]{"id_pracownika","id_klienta","termin","cel_wizyty"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getActionCommand().equals("Dodaj Wizyte"))
-            new makeVist(frame, perm);
+        if(e.getSource().equals(add)) {
+            //new AddClient(frame);
+        	new makeVist(frame,perm);
+        }
     }
 }
