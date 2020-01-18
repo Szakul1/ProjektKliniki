@@ -1,10 +1,13 @@
 
 package app;
 
-import java.sql.*;
-import java.sql.Date;
-import javax.swing.JOptionPane;
 
+
+
+
+
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.*;
 
 public class DataBaseConnection {
@@ -16,7 +19,7 @@ public class DataBaseConnection {
     {
         this.frame = frame;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/KlinikaWeterynaryjna", "root", "1234");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/klinika?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "paryta22");
             stmt = conn.createStatement();
             
         } catch (SQLException ex) {
@@ -27,7 +30,7 @@ public class DataBaseConnection {
     public DataBaseConnection() {
     	
     	 try {
-             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/KlinikaWeterynaryjna", "root", "1234");
+             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/klinika?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "paryta22");
              stmt = conn.createStatement();
              
          } catch (SQLException ex) {
@@ -37,7 +40,7 @@ public class DataBaseConnection {
     }
 
     public ArrayList<String> select_info(Permision perm) {
-    	ArrayList<String> results = new ArrayList();
+    	ArrayList<String> results = new ArrayList<String>();
     	String table = "";
     	if(perm == Permision.CLIENT) {
     		table = "klienci";
@@ -73,34 +76,12 @@ public class DataBaseConnection {
     }
     
     
-    public void backup() {
-    	Process p =null;
-    	try {
-    		Runtime runtime = Runtime.getRuntime();
-    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe -uroot -p --add-drop-database -Bklinika -rC:/Users/Public/Music/data.sql");
-    		int complete = p.waitFor();
-    		if(complete==0) {
-    			System.out.println("backup");
-    		}
-    		else {
-    			int len;
-    			if ((len = p.getErrorStream().available()) > 0) {
-    			  byte[] buf = new byte[len];
-    			  p.getErrorStream().read(buf);
-    			  System.err.println("Command error:\t\""+new String(buf)+"\"");
-    			}
-    			System.out.println("no backup");
-    		}
-    	} catch (Exception e) {
-    		e.printStackTrace();
-    	}
-    	
-    }
+    
     
     
     public void select(String table, String[] conditions, String[] columns, Function fun)
     {
-        List<String[]> results = new ArrayList<>();
+        List<String[]> results = new ArrayList<String[]>();
         try
         {
             String testquery = "Select * From " + table + parseConditions(conditions);
@@ -123,26 +104,21 @@ public class DataBaseConnection {
     {
         try
         {
-            List<String[]> results = new ArrayList<>();
+            List<String[]> results = new ArrayList<String[]>();
             String columns ="";
             for(String s : column)
                 columns += s + ",";
             columns = columns.substring(0, columns.length()-1);
             String testquery = "Select " + columns +" From " + table +" "+ condition;
             ResultSet res = stmt.executeQuery(testquery);
+            String[] row = new String[column.length];
             while (res.next()) 
             {
-                String[] row = new String[column.length];
                 for(int i=0; i<column.length; i++)
                     row[i] = res.getString(column[i]);
                 results.add(row);
             }
-            if(results.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
-                return new String[][]{};
-            }
-            return results.toArray(new String[][]{});
+            return results.toArray(new String[0][]);
         }
         catch(SQLException ex)
         {
@@ -181,10 +157,10 @@ public class DataBaseConnection {
         }
     }
     
-    public void giveRaise(int percent) {
+    public void giveRaise(int salary,int percent) {
     	
     	List<Integer> results = new ArrayList<Integer>();
-    	String testquery = "Select pensja From pracownicy";
+    	String testquery = "Select pensja From pracownicy Where pensja<="+Integer.toString(salary);
         ResultSet res = null;
 		try {
 			res = stmt.executeQuery(testquery);
@@ -240,45 +216,6 @@ public class DataBaseConnection {
 		}
     		
     }
-    	List<Integer> results = new ArrayList();
-    	String testquery = "Select pensja From pracownicy";
-        ResultSet res = null;
-		try {
-			res = stmt.executeQuery(testquery);
-			while(res.next()) {
-				results.add(res.getInt("pensja"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-    	
-    	PreparedStatement updateSalary = null;
-    	for(int s:results) {
-    		int raise = s+s*percent/100;
-    		String updateString = 
-    				"Update pracownicy Set pensja=" + raise + " Where pensja=" + s;
-    		try {
-				updateSalary = conn.prepareStatement(updateString);
-				updateSalary.executeUpdate();
-				conn.commit();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				if(conn!=null) {
-					try {
-						System.err.print("Transaction is being rolled back");
-						conn.rollback();
-					} catch(SQLException excep) {
-						e.printStackTrace();
-					}
-				}
-			}
-    	
-    	}
-    		
-    }
     
     public int insert(String table, String[] values) {
     	try
@@ -294,27 +231,68 @@ public class DataBaseConnection {
             return -1;
         }
     }
-
-    public String[][] callProcedure(String name, String value[], int columnNumber)
+    
+    public int insert_columns(String table,String[] values) {
+    	try
+        {
+    		String insertquery = "";
+    		if(table.equals("klienci")) {
+    			insertquery = "Insert INTO " + table + "(imie,nazwisko,numer_tel) VALUES " + parseValues(values);
+    		}
+    		else if(table.equals("pracownicy")) {
+    			insertquery = "Insert INTO " + table + "(imie,nazwisko,numer_tel,data_urodzenia,pensja,zawod) VALUES " + parseValues(values);
+    		} 
+    		System.out.println(insertquery);
+            int res = stmt.executeUpdate(insertquery);
+            return res;
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+            return -1;
+        }
+    }
+    
+    public void backup() {
+    	Process p =null;
+    	try {
+    		Runtime runtime = Runtime.getRuntime();
+    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe -uroot -pparyta22 --add-drop-database -Bklinika -rC:/Users/Public/Music/data.sql");
+    		int complete = p.waitFor();
+    		if(complete==0) {
+    			System.out.println("backup");
+    		}
+    		else {
+    			int len;
+    			if ((len = p.getErrorStream().available()) > 0) {
+    			  byte[] buf = new byte[len];
+    			  p.getErrorStream().read(buf);
+    			  System.err.println("Command error:\t\""+new String(buf)+"\"");
+    			}
+    			System.out.println("no backup");
+    		}
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    }
+    
+    
+    public String[][] callProcedure(String name, String values[], int columnNumber)
     {
         CallableStatement cstmt;
-        List<String[]> results = new ArrayList<>();
+        List<String[]> results = new ArrayList<String[]>();
         try {
             String help="";
-            String SQL;
-            if(value.length==1)
-            {
-                SQL = "call "+name+" ('"+value[0]+"')";
-                cstmt = conn.prepareCall(SQL);
-            }
-            else
-            {
-                value[1]="1999-06-01";
-                SQL = "{call " + name + " (?,?)}";
-                cstmt = conn.prepareCall(SQL);
-                cstmt.setInt(1, Integer.parseInt(value[0]));
-                cstmt.setDate(2, Date.valueOf(value[1]));
-            }
+            /*
+            for(String s : values)
+                help+=s+",";
+            
+            help = help.substring(0, help.length()-1);
+            */
+            
+            String SQL = "call "+name+" ('"+help+"')";
+            cstmt = conn.prepareCall(SQL);
             ResultSet res = cstmt.executeQuery();
             while (res.next()) 
             {
@@ -322,11 +300,6 @@ public class DataBaseConnection {
                 for(int i=1; i<=columnNumber; i++)
                     row[i-1] = res.getString(i);
                 results.add(row);
-            }
-            if(results.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
-                return new String[][]{new String[]{}};
             }
             return results.toArray(new String[results.size()][]);
         }
@@ -416,3 +389,8 @@ public class DataBaseConnection {
         //new DataBaseConnection();
     }
 }
+	}
+}
+
+
+
