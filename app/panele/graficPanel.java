@@ -24,7 +24,7 @@ public class graficPanel extends JPanel implements ActionListener
         Function fun;
 
         setLayout(new BorderLayout());
-        add = new JButton("Dodaj Wizyte");
+        add = new JButton("Dodaj Grafik");
         add.addActionListener(this);
         if(perm != Permision.VET && perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
         {   
@@ -37,14 +37,14 @@ public class graficPanel extends JPanel implements ActionListener
             fun = Function.SELECT;
             fun.setId(perm.getId());
         }
-        select = new myPanel("grafik",new String[]{"dzien","rozpoczecie","zakonczenie"},frame, fun);
+        select = new myPanel("grafik",new String[]{"id_pracownika","dzien","rozpoczecie","zakonczenie"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getActionCommand().equals("Dodaj Wizyte"))
-            new AddClient(frame);
+        if(e.getActionCommand().equals("Dodaj Grafik"))
+            new AddGrafic(frame);
     }
 }
