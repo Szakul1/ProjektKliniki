@@ -66,7 +66,8 @@ public class makeVist extends JFrame implements ActionListener {
         calendar.add(Calendar.DATE, 1);
         picker.getMonthView().setLowerBound(calendar.getTime());
         calendar.add(Calendar.WEEK_OF_YEAR, 1);
-        picker.getMonthView().setUpperBound(calendar.getTime());
+        if(perm == Permision.CLIENT)
+            picker.getMonthView().setUpperBound(calendar.getTime());
 
         calendar = Calendar.getInstance();
         calendar2 = Calendar.getInstance();
@@ -130,8 +131,8 @@ public class makeVist extends JFrame implements ActionListener {
             help2 = new String[names.length];
             idAnimal= new String[names.length];
             for (int i = 0; i < names.length; i++) {
-                help2[i] = names[i][0];
-                idAnimal[i] = names[i][1];
+                idAnimal[i] = names[i][0];
+                help2[i] = names[i][1];
             }
 
             model = new DefaultComboBoxModel<>(help2);
@@ -158,36 +159,32 @@ public class makeVist extends JFrame implements ActionListener {
         }
         if(e.getSource().equals(picker) && workers.getSelectedIndex() != -1)
         {
-            model = new DefaultComboBoxModel<>(frame.getDataBase().callProcedure("wyswietlCzas", 
-                new String[]{idWorker[workers.getSelectedIndex()], 
-                    format.format(picker.getDate())}, 1)[0]);
+            names = frame.getDataBase().callProcedure("wyswietlCzas", 
+            new String[]{idWorker[workers.getSelectedIndex()], 
+                format.format(picker.getDate())}, 1);
+            help2 = new String[names.length];
+            for (int i = 0; i < names.length; i++) {
+                help2[i] = names[i][0];
+            }
+            model = new DefaultComboBoxModel<>(help2);
             pickTime.setModel(model);
             
             pack();
         }
-        if (e.getActionCommand().equals("Zapisz się") && picker.getDate() != null && services.getSelectedIndex() != -1
+        if (e.getActionCommand().equals("Zapisz sie") && picker.getDate() != null && services.getSelectedIndex() != -1
                 && animals.getSelectedIndex() != -1) {
-
             if (perm.equals(Permision.CLIENT))
                 help = Integer.toString(perm.getId());
             else
                 help = idField.getText();
+            String[] maciek = format.format(picker.getDate()).split("-");
+            maciek[0] = maciek[2]+"-"+maciek[1]+"-"+maciek[0];
             frame.getDataBase().insert("wizyty", new String[]{
                 idWorker[workers.getSelectedIndex()],
                 idAnimal[animals.getSelectedIndex()],
-                format.format(picker.getDate()) + " " + pickTime.getSelectedItem().toString(),
+                maciek[0] + " " + pickTime.getSelectedItem().toString(),
                 services.getSelectedItem().toString()
             });
-            /*
-            if (frame.getDataBase().callProcedure(procedure,
-                    new String[] { idWorker[workers.getSelectedIndex()], idAnimal[animals.getSelectedIndex()],
-                            format.format(picker.getDate()), services.getSelectedItem().toString(), },
-                    1)[0][0].equals("0"))
-                JOptionPane.showConfirmDialog(this, "Termin zajęty lub wyczerpano limit", "Informacja",
-                        JOptionPane.INFORMATION_MESSAGE);
-            else
-                JOptionPane.showConfirmDialog(this, "Zapisano", "Informacja", JOptionPane.INFORMATION_MESSAGE);
-                */
 
         }
     }
