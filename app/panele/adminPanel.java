@@ -100,6 +100,9 @@ public class adminPanel extends JPanel implements ActionListener{
 		else if(e.getSource().equals(btBut1)) {
 			main.getDataBase().backup();
 		}
+		else if(e.getSource().equals(btBut2)) {
+			main.getDataBase().read_backup();
+		}
 	}
 }
 
