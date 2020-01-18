@@ -41,7 +41,7 @@ public class visitPanel extends JPanel implements ActionListener
             fun = Function.SELECT;
             fun.setId(perm.getId());
         }
-        select = new myPanel("wizyty",new String[]{"termin","cel_wizyty","oplata"},frame, fun);
+        select = new myPanel("wizyty",new String[]{"termin","cel_wizyty"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 
