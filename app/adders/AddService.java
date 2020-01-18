@@ -45,12 +45,12 @@ public class AddService extends JFrame implements ActionListener{
     // constructor, to initialize the components 
     // with default values. 
     //mainFrame frame
-    public AddService() 
+    public AddService(mainFrame frame) 
     {
-    	//this.frame = frame;
+    	this.frame = frame;
         setTitle("Formularz rejestracji"); 
         setBounds(300, 90, 400, 500); 
-        setDefaultCloseOperation(EXIT_ON_CLOSE); 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setResizable(false); 
   
         c = getContentPane(); 
@@ -139,7 +139,7 @@ public class AddService extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		boolean puste = false;
 		String occup = null;
-		if(e.getSource()==add) {
+		if(e.getSource()==sub) {
 			String names = tname.getText();
 			if(names.equals("")) {
 				puste = true;
@@ -152,10 +152,10 @@ public class AddService extends JFrame implements ActionListener{
 				puste = true;
 			}
 			else if(ass.isSelected()) {
-				occup = "Technik";
+				occup = "technik";
 			}
 			else {
-				occup = "Weterynarz";
+				occup = "weterynarz";
 			}
 			
 		
@@ -166,13 +166,13 @@ public class AddService extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(this, "Wypelnij wszystkie pola");
 			}
 			else {
-				ArrayList<String> values = new ArrayList();
+				ArrayList<String> values = new ArrayList<String>();
 				values.add(names);
 				values.add(prices);
 				values.add(occup);
 				
 				
-				String[] wyniki = (String[]) values.toArray();
+				String[] wyniki = values.toArray(new String[values.size()]);
 				
 				frame.getDataBase().insert("uslugi",wyniki);
 			}
@@ -180,7 +180,5 @@ public class AddService extends JFrame implements ActionListener{
 		
 	}
 	
-	public static void main(String[] args) {
-		new AddService();
-	}
+
 }
