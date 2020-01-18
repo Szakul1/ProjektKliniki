@@ -73,7 +73,7 @@ public class AddClient extends JFrame implements ActionListener{
     	this.frame = frame;
         setTitle("Formularz rejestracji"); 
         setBounds(300, 90, 900, 600); 
-        setDefaultCloseOperation(EXIT_ON_CLOSE); 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setResizable(false); 
   
         c = getContentPane(); 
@@ -85,7 +85,7 @@ public class AddClient extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imi�"); 
+        name = new JLabel("Imie"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
@@ -116,73 +116,35 @@ public class AddClient extends JFrame implements ActionListener{
         c.add(mno); 
   
         tmno = new JTextField(); 
-        tmno.setText("+48 ");
         tmno.setFont(new Font("Arial", Font.PLAIN, 15)); 
         tmno.setSize(150, 20); 
         tmno.setLocation(200, 200); 
         c.add(tmno); 
   
-        gender = new JLabel("P�e�"); 
-        gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        gender.setSize(100, 20); 
-        gender.setLocation(100, 250); 
-        c.add(gender); 
-  
-        male = new JRadioButton("M�czyzna"); 
-        male.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        male.setSelected(true); 
-        male.setSize(75, 20); 
-        male.setLocation(200, 250); 
-        c.add(male); 
-  
-        female = new JRadioButton("Kobieta"); 
-        female.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        female.setSelected(false); 
-        female.setSize(80, 20); 
-        female.setLocation(275, 250); 
-        c.add(female); 
-  
-        gengp = new ButtonGroup(); 
-        gengp.add(male); 
-        gengp.add(female); 
-  
+  	
         dob = new JLabel("Data Urodzenia"); 
         dob.setFont(new Font("Arial", Font.PLAIN, 20)); 
         dob.setSize(100, 20); 
-        dob.setLocation(100, 300); 
+        dob.setLocation(100, 250); 
         c.add(dob); 
   
         date = new JComboBox(dates); 
         date.setFont(new Font("Arial", Font.PLAIN, 15)); 
         date.setSize(50, 20); 
-        date.setLocation(200, 300); 
+        date.setLocation(200, 250); 
         c.add(date); 
   
         month = new JComboBox(months); 
         month.setFont(new Font("Arial", Font.PLAIN, 15)); 
         month.setSize(60, 20); 
-        month.setLocation(250, 300); 
+        month.setLocation(250, 250); 
         c.add(month); 
   
         year = new JComboBox(years); 
         year.setFont(new Font("Arial", Font.PLAIN, 15)); 
         year.setSize(60, 20); 
-        year.setLocation(320, 300); 
+        year.setLocation(320, 250); 
         c.add(year); 
-  
-        address = new JLabel("Adres"); 
-        address.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        address.setSize(100, 20); 
-        address.setLocation(100, 350); 
-        c.add(add); 
-  
-        taddress = new JTextArea(); 
-        taddress.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        taddress.setSize(200, 75); 
-        taddress.setLocation(200, 350); 
-        taddress.setLineWrap(true); 
-        c.add(taddress); 
-  
   
         add = new JButton("Dodaj"); 
         add.setFont(new Font("Arial", Font.PLAIN, 15)); 
@@ -191,7 +153,7 @@ public class AddClient extends JFrame implements ActionListener{
         add.addActionListener(this); 
         c.add(add); 
   
-        reset = new JButton("Wyczy��"); 
+        reset = new JButton("Wyczysc˝"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(270, 450); 
@@ -207,7 +169,6 @@ public class AddClient extends JFrame implements ActionListener{
         setVisible(true); 
     }
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		boolean puste = false;
@@ -228,31 +189,6 @@ public class AddClient extends JFrame implements ActionListener{
 			else if(telephone.length()<9){
 				zle = true;
 			}
-			String sex;
-			if(male.isSelected()) {
-				sex = "m";
-			}
-			else if(female.isSelected()) {
-				sex = "f";
-			}
-			else {
-				sex = "";
-			}
-			if(sex.equals("")) {
-				puste = true;
-			}
-			String sday = date.getSelectedItem().toString();
-			if(sday.equals("")) {
-				puste = true;
-			}
-			String smonth = month.getSelectedItem().toString();
-			if(smonth.equals("")) {
-				puste = true;
-			}
-			String syear = year.getSelectedItem().toString();
-			if(syear.equals("")) {
-				puste = true;
-			}
 			//jaki format to ma miec
 			if(puste==true) {
 				puste = false;
@@ -263,22 +199,18 @@ public class AddClient extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(this, "Zly numer telefonu");
 			}
 			else {
-				String birthday = sday + smonth + syear;
-				ArrayList<String> values = new ArrayList();
+				
+				ArrayList<String> values = new ArrayList<String>();
 				values.add(name);
 				values.add(surname);
 				values.add(telephone);
-				values.add(sex);
-				values.add(birthday);
 				
-				String[] wyniki = (String[]) values.toArray();
+				String[] wyniki = values.toArray(new String[values.size()]);
 				
-				frame.getDataBase().insert("klienci",wyniki);
+				frame.getDataBase().insert_columns("klienci",wyniki);
 			}
 		}
 	}
 	
-	public static void main(String[] args) {
-		//new AddClient();
-	}
+	
 }
