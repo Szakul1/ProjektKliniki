@@ -47,6 +47,6 @@ public class servicePanel extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         if(e.getActionCommand().equals("Dodaj Usluge"))
-            new AddClient(frame);
+            new AddService(frame);
     }
 }
