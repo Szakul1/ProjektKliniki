@@ -366,7 +366,7 @@ public class DataBaseConnection {
     }
     
     private String parseLogin(String[] values) {
-    	String result = "Where login=" + values[0] + " AND haslo=" + values[1];
+    	String result = "Where login='" + values[0] + "' AND haslo='" + values[1] + "'";
     	return result;
     }
     
@@ -378,29 +378,36 @@ public class DataBaseConnection {
         	 int id;
              String testquery = "Select * From uzytkownicy " + parseLogin(values);
              ResultSet res = stmt.executeQuery(testquery);
-
-             perm = res.getString("uprawnienia");
-             id = Integer.parseInt(res.getString("id"));
-
-             if(perm.equals("technik")) {
-            	 permision = Permision.TECHNICIAN;
+             if(res.next() == false) {
+            	 return permision;
              }
-             else if(perm.equals("weterynarz")) {
-            	 permision = Permision.VET;
-             }
-             else if(perm.equals("dyrektor")) {
-            	 permision = Permision.DIRECTOR;
-             }
-             else if(perm.equals("admin")) {
-            	 permision = Permision.ADMIN;
-             }
-             else if(perm.equals("klient")){
-            	 permision = Permision.CLIENT;
-             }
-             else {
+            
+             
+            
+	             perm = res.getString("uprawnienia");
+	             id = Integer.parseInt(res.getString("id"));
+	
+	             if(perm.equals("technik")) {
+	            	 permision = Permision.TECHNICIAN;
+	             }
+	             else if(perm.equals("weterynarz")) {
+	            	 permision = Permision.VET;
+	             }
+	             else if(perm.equals("dyrektor")) {
+	            	 permision = Permision.DIRECTOR;
+	             }
+	             else if(perm.equals("admin")) {
+	            	 permision = Permision.ADMIN;
+	             }
+	             else if(perm.equals("klient")){
+	            	 permision = Permision.CLIENT;
+	             }
+	             else {
             	 //cos poszlo nie tak
-             }
+	             }
+             
              permision.setId(id);
+         
          }
          catch(SQLException ex)
          {
