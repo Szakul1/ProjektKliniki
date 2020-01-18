@@ -24,25 +24,32 @@ public class AddVaccination extends JFrame implements ActionListener{
 	mainFrame frame;
 	JPanel pnPanel0;
 	JLabel lbLabel0;
-	JLabel lbLabel1;
-	JLabel lbLabel2;
 	JLabel lbLabel3;
+	JLabel lbLabel4;
+	JLabel lbLabel5;
+	JTextField tfText0;
+	JTextField tfText1;
 	JButton btBut0;
 	JCheckBox cbBox0;
-	JTextField tfText0;
-	JTextField tfText2;
+
 
 	public AddVaccination(mainFrame frame){
+		setTitle("Dodaj szczepienie"); 
+        //setBounds(300, 90, 200, 300); 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false); 
 		this.frame = frame;
+		
 		
 		GridBagLayout gbPanel0 = new GridBagLayout();
 		GridBagConstraints gbcPanel0 = new GridBagConstraints();
 		setLayout( gbPanel0 );
 
 		lbLabel0 = new JLabel( "Dodaj szczepienie"  );
-		gbcPanel0.gridx = 6;
-		gbcPanel0.gridy = 1;
-		gbcPanel0.gridwidth = 7;
+		gbcPanel0.gridx = 0;
+		gbcPanel0.gridy = 0;
+		gbcPanel0.gridwidth = 3;
 		gbcPanel0.gridheight = 1;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
 		gbcPanel0.weightx = 1;
@@ -51,49 +58,72 @@ public class AddVaccination extends JFrame implements ActionListener{
 		gbPanel0.setConstraints( lbLabel0, gbcPanel0 );
 		add( lbLabel0 );
 
-		lbLabel1 = new JLabel( "Id zwierzecia"  );
-		JScrollPane scpLabel1 = new JScrollPane( lbLabel1 );
-		gbcPanel0.gridx = 1;
-		gbcPanel0.gridy = 5;
-		gbcPanel0.gridwidth = 5;
+		lbLabel3 = new JLabel( "id zwierzaka"  );
+		gbcPanel0.gridx = 0;
+		gbcPanel0.gridy = 1;
+		gbcPanel0.gridwidth = 2;
 		gbcPanel0.gridheight = 1;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
 		gbcPanel0.weightx = 1;
 		gbcPanel0.weighty = 1;
 		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( scpLabel1, gbcPanel0 );
-		add( scpLabel1 );
+		gbPanel0.setConstraints( lbLabel3, gbcPanel0 );
+		add( lbLabel3 );
 
-		lbLabel2 = new JLabel( "Choroba"  );
-		gbcPanel0.gridx = 1;
-		gbcPanel0.gridy = 9;
-		gbcPanel0.gridwidth = 5;
+		lbLabel4 = new JLabel( "choroba"  );
+		gbcPanel0.gridx = 0;
+		gbcPanel0.gridy = 2;
+		gbcPanel0.gridwidth = 2;
 		gbcPanel0.gridheight = 1;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
 		gbcPanel0.weightx = 1;
 		gbcPanel0.weighty = 1;
 		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( lbLabel2, gbcPanel0 );
-		add( lbLabel2 );
+		gbPanel0.setConstraints( lbLabel4, gbcPanel0 );
+		add( lbLabel4 );
 
-		lbLabel3 = new JLabel( "W tej klinice"  );
-		JScrollPane scpLabel3 = new JScrollPane( lbLabel3 );
-		gbcPanel0.gridx = 1;
-		gbcPanel0.gridy = 13;
-		gbcPanel0.gridwidth = 5;
+		lbLabel5 = new JLabel( "w tej klinice"  );
+		gbcPanel0.gridx = 0;
+		gbcPanel0.gridy = 3;
+		gbcPanel0.gridwidth = 2;
 		gbcPanel0.gridheight = 1;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
 		gbcPanel0.weightx = 1;
 		gbcPanel0.weighty = 1;
 		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( scpLabel3, gbcPanel0 );
-		add( scpLabel3 );
+		gbPanel0.setConstraints( lbLabel5, gbcPanel0 );
+		add( lbLabel5 );
+
+		tfText0 = new JTextField( );
+		gbcPanel0.gridx = 2;
+		gbcPanel0.gridy = 1;
+		gbcPanel0.gridwidth = 1;
+		gbcPanel0.gridheight = 1;
+		gbcPanel0.fill = GridBagConstraints.BOTH;
+		gbcPanel0.weightx = 1;
+		gbcPanel0.weighty = 0;
+		gbcPanel0.anchor = GridBagConstraints.NORTH;
+		gbPanel0.setConstraints( tfText0, gbcPanel0 );
+		add( tfText0 );
+
+		tfText1 = new JTextField( );
+		gbcPanel0.gridx = 2;
+		gbcPanel0.gridy = 2;
+		gbcPanel0.gridwidth = 1;
+		gbcPanel0.gridheight = 1;
+		gbcPanel0.fill = GridBagConstraints.BOTH;
+		gbcPanel0.weightx = 1;
+		gbcPanel0.weighty = 0;
+		gbcPanel0.anchor = GridBagConstraints.NORTH;
+		gbPanel0.setConstraints( tfText1, gbcPanel0 );
+		add( tfText1 );
 
 		btBut0 = new JButton( "Dodaj"  );
-		gbcPanel0.gridx = 7;
-		gbcPanel0.gridy = 16;
-		gbcPanel0.gridwidth = 4;
-		gbcPanel0.gridheight = 2;
+		btBut0.addActionListener(this);
+		gbcPanel0.gridx = 0;
+		gbcPanel0.gridy = 4;
+		gbcPanel0.gridwidth = 3;
+		gbcPanel0.gridheight = 1;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
 		gbcPanel0.weightx = 1;
 		gbcPanel0.weighty = 0;
@@ -102,8 +132,8 @@ public class AddVaccination extends JFrame implements ActionListener{
 		add( btBut0 );
 
 		cbBox0 = new JCheckBox( ""  );
-		gbcPanel0.gridx = 9;
-		gbcPanel0.gridy = 13;
+		gbcPanel0.gridx = 2;
+		gbcPanel0.gridy = 3;
 		gbcPanel0.gridwidth = 1;
 		gbcPanel0.gridheight = 1;
 		gbcPanel0.fill = GridBagConstraints.BOTH;
@@ -113,29 +143,8 @@ public class AddVaccination extends JFrame implements ActionListener{
 		gbPanel0.setConstraints( cbBox0, gbcPanel0 );
 		add( cbBox0 );
 
-		tfText0 = new JTextField( );
-		gbcPanel0.gridx = 9;
-		gbcPanel0.gridy = 9;
-		gbcPanel0.gridwidth = 4;
-		gbcPanel0.gridheight = 1;
-		gbcPanel0.fill = GridBagConstraints.BOTH;
-		gbcPanel0.weightx = 1;
-		gbcPanel0.weighty = 0;
-		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( tfText0, gbcPanel0 );
-		add( tfText0 );
-
-		tfText2 = new JTextField( );
-		gbcPanel0.gridx = 12;
-		gbcPanel0.gridy = 5;
-		gbcPanel0.gridwidth = 1;
-		gbcPanel0.gridheight = 1;
-		gbcPanel0.fill = GridBagConstraints.BOTH;
-		gbcPanel0.weightx = 1;
-		gbcPanel0.weighty = 0;
-		gbcPanel0.anchor = GridBagConstraints.NORTH;
-		gbPanel0.setConstraints( tfText2, gbcPanel0 );
-		add( tfText2 );
+		pack();
+		setVisible(true); 
 	}
 
 	@Override
@@ -151,27 +160,27 @@ public class AddVaccination extends JFrame implements ActionListener{
 			else {
 				id = tfText0.getText();
 			}
-			if(tfText2.getText().equals("")) {
+			if(tfText1.getText().equals("")) {
 				puste = true;
 			}
 			else {
-				choroba = tfText2.getText();
+				choroba = tfText1.getText();
 			}
 			if(puste==true) {
 				puste = false;
 				JOptionPane.showMessageDialog(this, "Wypelnij wszystkie pola");
 			}
 			else {
-				String klinika = "false";
+				String klinika = "0";
 				if(cbBox0.isSelected()) {
-					klinika = "true";
+					klinika = "1";
 				}
 				ArrayList<String> values = new ArrayList<String>();
 				values.add(id);
 				values.add(choroba);
 				values.add(klinika);
 			
-				String[] wyniki = (String[]) values.toArray();
+				String[] wyniki = values.toArray(new String[values.size()]);
 				frame.getDataBase().insert("szczepienia",wyniki);
 			}
 	}
