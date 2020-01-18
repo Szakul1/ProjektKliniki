@@ -30,10 +30,11 @@ public class AddPet extends JFrame implements ActionListener{
     private JLabel tpet;
     private JComboBox pettype;
     private JLabel des;
-    private JLabel coun;
+    private JLabel country;
     private JTextField destiny;
-    private JTextField country;
+    private JTextField tcountry;
     private JCheckBox checkBox;
+    private JCheckBox kastrowane;
     private JLabel add; 
     private JTextArea tadd; 
     private JCheckBox term; 
@@ -74,38 +75,9 @@ public class AddPet extends JFrame implements ActionListener{
            "1996", "1997", "1998", "1999",
            "2000", "2001", "2002"}; 
     
-    private String types[]
-    	= {"hodowlane","domowe","egzotyczne"};
+
     
-    
-    public void adds(String s) {
-    	switch(s) {
-    		case "hodowlane":
-    			whattype = "h";
-    			destiny = new JTextField();
-    			destiny.setFont(new Font("Arial", Font.PLAIN, 15)); 
-    			destiny.setSize(100, 20); 
-    			destiny.setLocation(300, 350); 
-    	        c.add(destiny); 
-    			break;
-    		case "domowe":
-    			whattype = "d";
-    			checkBox = new JCheckBox("Kastrowane"); 
-    		    checkBox.setFont(new Font("Arial", Font.PLAIN, 20)); 
-    		    checkBox.setSize(70,20); 
-    		    checkBox.setLocation(300, 350); 
-    		    c.add(checkBox); 
-    			break;
-    		case "egzotyczne":
-    			whattype = "e";
-    			country = new JTextField();
-    			country.setFont(new Font("Arial", Font.PLAIN, 15)); 
-    			country.setSize(100, 20); 
-    			country.setLocation(300, 350); 
-    			c.add(country);
-    			break;
-    	}
-    }
+   
     // constructor, to initialize the components 
     // with default values. 
     public AddPet(mainFrame frame) 
@@ -113,7 +85,7 @@ public class AddPet extends JFrame implements ActionListener{
     	this.frame = frame;
         setTitle("Formularz rejestracji"); 
         setBounds(300, 90, 900, 600); 
-        setDefaultCloseOperation(EXIT_ON_CLOSE); 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setResizable(false); 
   
         c = getContentPane(); 
@@ -125,7 +97,7 @@ public class AddPet extends JFrame implements ActionListener{
         title.setLocation(300, 30); 
         c.add(title); 
   
-        name = new JLabel("Imi�"); 
+        name = new JLabel("Imie"); 
         name.setFont(new Font("Arial", Font.PLAIN, 20)); 
         name.setSize(100, 20); 
         name.setLocation(100, 100); 
@@ -161,7 +133,7 @@ public class AddPet extends JFrame implements ActionListener{
         tweight.setLocation(200, 200); 
         c.add(tweight); 
   
-        gender = new JLabel("Płeć"); 
+        gender = new JLabel("Plec"); 
         gender.setFont(new Font("Arial", Font.PLAIN, 20)); 
         gender.setSize(100, 20); 
         gender.setLocation(100, 250); 
@@ -209,24 +181,24 @@ public class AddPet extends JFrame implements ActionListener{
         year.setLocation(320, 300); 
         c.add(year); 
         
-        tpet = new JLabel("typ");
-        tpet.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tpet.setSize(40,20);
-        tpet.setLocation(100,350);
-        c.add(tpet);
-       
-        pettype = new JComboBox(types);
-        pettype.setSelectedIndex(0);
-        pettype.setFont(new Font("Arial", Font.PLAIN, 15));
-        pettype.setSize(80,20);
-        pettype.setLocation(200,350);
-        pettype.addActionListener(this);
-        c.add(pettype);
+        kastrowane = new JCheckBox("Czy byl kastrowany?"); 
+        kastrowane.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        kastrowane.setSize(100, 20); 
+        kastrowane.setLocation(100, 350); 
+        c.add(kastrowane);
         
-        /*
-       
-		*/
-  
+        country = new JLabel("Kraj pochodzenia"); 
+        country.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        country.setSize(100, 20); 
+        country.setLocation(100, 400); 
+        c.add(country); 
+        
+        tcountry = new JTextField(); 
+        tcountry.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        tcountry.setSize(100, 20); 
+        tcountry.setLocation(100, 400); 
+        c.add(tcountry); 
+        
   
         sub = new JButton("Dodaj"); 
         sub.setFont(new Font("Arial", Font.PLAIN, 15)); 
@@ -235,7 +207,7 @@ public class AddPet extends JFrame implements ActionListener{
         sub.addActionListener(this); 
         c.add(sub); 
   
-        reset = new JButton("Wyczyść"); 
+        reset = new JButton("Wyczysc"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(270, 400); 
@@ -251,15 +223,10 @@ public class AddPet extends JFrame implements ActionListener{
         setVisible(true); 
     }
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		boolean puste = false;
-		if(e.getSource()==pettype) {
-			String s = (String) pettype.getSelectedItem();
-			adds(s);
-		}
-		else if(e.getSource()==add) {
+		if(e.getSource()==sub) {
 			String name = tname.getText();
 			if(name.equals("")) {
 				puste = true;
@@ -298,30 +265,17 @@ public class AddPet extends JFrame implements ActionListener{
 				puste = true;
 			}
 			
-			String typo = "";
-			
-			switch(whattype) {
-				case "h":
-					typo = destiny.getText();
-					if(typo.equals("")) {
-						puste = true;
-					}
-					break;
-				case "d":
-					if(checkBox.isSelected()) {
-						typo = "True";
-					}
-					else {
-						typo = "False";
-					}
-					break;
-				case "e":
-					typo = country.getText();
-					if(typo.equals("")) {
-						puste = true;
-					}
-					break;
+			String typo;
+			if(kastrowane.isSelected()) {
+				typo = "True";
 			}
+			else {
+				typo = "False";
+			}
+			String kraj = tcountry.getText();
+			if(kraj.equals("")) {
+				puste = true;
+			}	
 			//jaki format to ma miec
 			if(puste==true) {
 				puste = false;
@@ -329,16 +283,16 @@ public class AddPet extends JFrame implements ActionListener{
 			}
 			else {
 				String birthday = sday + smonth + syear;
-				ArrayList<String> values = new ArrayList();
+				ArrayList<String> values = new ArrayList<String>();
 				values.add(name);
+				values.add(birthday);
 				values.add(species);
 				values.add(weight);
 				values.add(sex);
-				values.add(birthday);
 				values.add(typo);
+				values.add(kraj);
 				
-				
-				String[] wyniki = (String[]) values.toArray();
+				String[] wyniki = values.toArray(new String[values.size()]);
 				
 				frame.getDataBase().insert("zwierzeta",wyniki);
 			}
@@ -346,7 +300,5 @@ public class AddPet extends JFrame implements ActionListener{
 		
 	}
 	
-	public static void main(String[] args) {
-		//new AddPet();
-	}
+	
 }
