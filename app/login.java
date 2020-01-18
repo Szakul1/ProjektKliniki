@@ -52,7 +52,6 @@ public class login extends JFrame implements ActionListener
         add(help);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e)
     {
         if(e.getActionCommand().equals("Login"))
@@ -66,10 +65,10 @@ public class login extends JFrame implements ActionListener
         	}
         	else {
         		new mainFrame(perm);
+        		setVisible(false);
         	}
             //uprawnienia i id
         	//new mainFrame(loginField.getText());
-            setVisible(false);
         }
     }
 
