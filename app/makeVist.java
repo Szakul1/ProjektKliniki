@@ -48,7 +48,7 @@ public class makeVist extends JFrame implements ActionListener {
         workers = new JComboBox<String>();
         workers.setPrototypeDisplayValue("             ");
         pickTime = new JComboBox<String>();
-        pickTime.setPrototypeDisplayValue("             ");
+        pickTime.setPrototypeDisplayValue("00:00:00");
         chooseService = new JLabel("Wybierz usluge");
         chooseWorker = new JLabel("Wybierz pracownika");
         chooseDate = new JLabel("Wybierz date");
@@ -159,9 +159,14 @@ public class makeVist extends JFrame implements ActionListener {
         }
         if(e.getSource().equals(picker) && workers.getSelectedIndex() != -1)
         {
+            String work;
+            if(perm == Permision.CLIENT)
+                work="false";
+            else
+                work="true";
             names = frame.getDataBase().callProcedure("wyswietlCzas", 
             new String[]{idWorker[workers.getSelectedIndex()], 
-                format.format(picker.getDate())}, 1);
+                format.format(picker.getDate()), work}, 1);
             help2 = new String[names.length];
             for (int i = 0; i < names.length; i++) {
                 help2[i] = names[i][0];
@@ -179,13 +184,18 @@ public class makeVist extends JFrame implements ActionListener {
                 help = idField.getText();
             String[] maciek = format.format(picker.getDate()).split("-");
             maciek[0] = maciek[2]+"-"+maciek[1]+"-"+maciek[0];
-            frame.getDataBase().insert("wizyty", new String[]{
+            if(frame.getDataBase().insert("wizyty", new String[]{
                 idWorker[workers.getSelectedIndex()],
                 idAnimal[animals.getSelectedIndex()],
                 maciek[0] + " " + pickTime.getSelectedItem().toString(),
                 services.getSelectedItem().toString()
-            });
-
+                })>0)
+            {
+                JOptionPane.showMessageDialog(this, "Zapisano", "Sukces", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Termin juz zajety", "Blad", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 

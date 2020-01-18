@@ -116,8 +116,8 @@ public class DataBaseConnection {
             }
             if(results.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
-                return new String[][]{};
+                //JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
+                return new String[][]{new String[]{""}};
             }
             return results.toArray(new String[][]{});
         }
@@ -295,10 +295,11 @@ public class DataBaseConnection {
             {
                 String[] maciek = value[1].split("-");
                 value[1] = maciek[2]+"-"+maciek[1]+"-"+maciek[0];
-                SQL = "{call " + name + " (?,?)}";
+                SQL = "{call " + name + " (?,?,?)}";
                 cstmt = conn.prepareCall(SQL);
                 cstmt.setInt(1, Integer.parseInt(value[0]));
                 cstmt.setString(2, value[1]);
+                cstmt.setBoolean(3, Boolean.parseBoolean(value[2]));
             }
             ResultSet res = cstmt.executeQuery();
             while (res.next()) 
@@ -310,7 +311,8 @@ public class DataBaseConnection {
             }
             if(results.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Brak wynikow", "Informacja", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Brak wolnych terminów w tym dniu",
+                                     "Informacja", JOptionPane.INFORMATION_MESSAGE);
                 return new String[][]{new String[]{}};
             }
             return results.toArray(new String[results.size()][]);
