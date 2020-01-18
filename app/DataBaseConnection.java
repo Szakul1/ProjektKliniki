@@ -1,13 +1,9 @@
-
 package app;
 
-
-
-
-
-
 import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Date;
+import javax.swing.JOptionPane;
+
 import java.util.*;
 
 public class DataBaseConnection {
@@ -19,7 +15,7 @@ public class DataBaseConnection {
     {
         this.frame = frame;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/klinika?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "paryta22");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/klinikaweterynaryjna?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "1234");
             stmt = conn.createStatement();
             
         } catch (SQLException ex) {
@@ -30,7 +26,7 @@ public class DataBaseConnection {
     public DataBaseConnection() {
     	
     	 try {
-             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/klinika?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "paryta22");
+             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/klinikaweterynaryjna?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "1234");
              stmt = conn.createStatement();
              
          } catch (SQLException ex) {
@@ -257,7 +253,7 @@ public class DataBaseConnection {
     	Process p =null;
     	try {
     		Runtime runtime = Runtime.getRuntime();
-    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe -uroot -pparyta22 --add-drop-database -Bklinika -rC:/Users/Public/Music/data.sql");
+    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe --databases --add-drop-database -uroot -p1234 klinikaweterynaryjna -rC:/Users/lukia/OneDrive/Pulpit/bazydanych/lista5/data.sql");
     		int complete = p.waitFor();
     		if(complete==0) {
     			System.out.println("backup");
@@ -399,8 +395,3 @@ public class DataBaseConnection {
         //new DataBaseConnection();
     }
 }
-	}
-}
-
-
-
