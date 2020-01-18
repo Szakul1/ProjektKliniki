@@ -39,7 +39,7 @@ public class petPanel extends JPanel implements ActionListener
             fun = Function.SELECT;
             fun.setId(perm.getId());
         }
-        select = new myPanel("zwierzeta",new String[]{"imie","data_urodzenia","gatunek","waga","plec","kastrowane"},frame, fun);
+        select = new myPanel("zwierzeta",new String[]{"id_zwierzecia","id_klienta","imie","data_urodzenia","gatunek","waga","plec","kastrowane"},frame, fun);
         add(select, BorderLayout.CENTER);
     }
 
@@ -47,6 +47,6 @@ public class petPanel extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         if(e.getActionCommand().equals("Dodaj Zwierzaka"))
-            new AddClient(frame);
+            new AddPet(frame);
     }
 }
