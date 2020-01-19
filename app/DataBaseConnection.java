@@ -282,6 +282,31 @@ public class DataBaseConnection {
     	}
     	
     }
+	
+	public void read_backup() {
+    	Process p = null;
+    	try {
+    		Runtime runtime = Runtime.getRuntime();
+    		p = runtime.exec("C:/Program Files/MySQL/MySQL Server 8.0/bin/mysql.exe -uroot -pparyta22 klinika < C:/Users/Public/Music/data.sql");
+    		int complete = p.waitFor();
+    		
+    		if(complete==0) {
+    			System.out.println("read backup");
+    		}
+    		else {
+    			int len;
+    			if ((len = p.getErrorStream().available()) > 0) {
+    			  byte[] buf = new byte[len];
+    			  p.getErrorStream().read(buf);
+    			  System.err.println("Command error:\t\""+new String(buf)+"\"");
+    			}
+    			System.out.println("no read backup");
+    		}
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    }
     
     
     public String[][] callProcedure(String name, String value[], int columnNumber)
