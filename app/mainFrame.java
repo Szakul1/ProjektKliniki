@@ -16,6 +16,7 @@ public class mainFrame extends JFrame
     private static final String admin = "admin";
     private static final String employees = "pracownicy";
     private static final String services = "uslugi";
+    private static final String users = "uzytkownicy";
     private static final String clients = "klienci";
     private static final String animals = "zwierzeta";
     private static final String visits = "wizyty";
@@ -52,6 +53,7 @@ public class mainFrame extends JFrame
         switch (permissions) {
             case ADMIN:
                 cards.addTab(admin, new adminPanel(this));
+                cards.addTab(users, new userPanel(this));
                 
             case DIRECTOR:
                 cards.addTab(employees,new employeePanel(this, permissions));
