@@ -130,7 +130,7 @@ public class myPanel extends JPanel implements ActionListener
             List<String> information = new ArrayList<>();
             for(int i=0; i<remove.size(); i++)
             {
-                if(!condition.get(i).getText().isEmpty())
+                if(!condition.get(i).getText().isEmpty() && columns.get(i).getSelectedIndex() != -1)
                 {
                     information.add(columns.get(i).getSelectedItem().toString());
                     information.add(condition.get(i).getText());

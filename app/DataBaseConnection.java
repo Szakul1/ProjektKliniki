@@ -47,7 +47,8 @@ public class DataBaseConnection {
     	else if(perm == Permision.VET || perm == Permision.TECHNICIAN) {
     		table = "pracownicy";
     	}
-    	String id = Integer.toString(perm.getId());
+        String id = Integer.toString(perm.getId());
+        results.add(table);
         try
         {
         	String testquery;
@@ -87,13 +88,14 @@ public class DataBaseConnection {
         try
         {
             String testquery;
-            if(conditions[0]=="OR")
+            if(conditions.length>0 && conditions[0]=="OR")
                 testquery = "Select * From " + table + (conditions.length > 2 ?
                  parseConditions(Arrays.copyOfRange(conditions, 2, conditions.length)) + " AND " : 
                  " Where ") + conditions[1];
             else
                 testquery = "Select * From " + table + parseConditions(conditions);
-                ResultSet res = stmt.executeQuery(testquery);
+            System.out.println(testquery);
+            ResultSet res = stmt.executeQuery(testquery);
             while (res.next()) 
             {
                 String[] row = new String[columns.length];
@@ -105,6 +107,7 @@ public class DataBaseConnection {
         }
         catch(SQLException ex)
         {
+            JOptionPane.showMessageDialog(null, "Bledne zapytanie", "Blad", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
     }
