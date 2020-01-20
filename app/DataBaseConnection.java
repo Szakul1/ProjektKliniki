@@ -385,9 +385,30 @@ public class DataBaseConnection {
         return result;
     }
     
-    public void call(String query) throws SQLException {
-    	stmt.executeQuery(query);
-    }
+        public void call(String query) throws SQLException {
+    	if(query.toLowerCase().indexOf("select")==0) {
+    		ArrayList<String[]> list = new ArrayList<String[]>();
+    		ArrayList<String> columns = new ArrayList<String>();
+    		ResultSet res = stmt.executeQuery(query);
+    		ResultSetMetaData rest = res.getMetaData();
+    		for(int i=1; i<=rest.getColumnCount(); i++) {
+    			columns.add(rest.getColumnName(i));
+    		}
+    			while (res.next()) 
+                {
+                    String[] row = new String[columns.size()];
+                    for(int i=0; i<columns.size(); i++)
+                        row[i] = res.getString(columns.get(i));
+                    list.add(row);
+                }
+    		new Results(list.toArray(new String[0][]), columns.toArray(new String[0]), frame, null, Function.SELECT);
+    	}
+    	else {
+    		stmt.executeUpdate(query);
+    		
+    	}
+    	
+    }z
     
     private String parseValues(String[] values) {
     	String sresult = "(";
