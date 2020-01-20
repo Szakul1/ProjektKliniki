@@ -4,6 +4,10 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 
 import java.util.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.math.BigInteger;
+
 
 public class DataBaseConnection {
     
@@ -390,12 +394,21 @@ public class DataBaseConnection {
     	return result;
     }
     
-    private String parseLogin(String[] values) {
-    	String result = "Where login='" + values[0] + "' AND haslo='" + values[1] + "'";
+    private String parseLogin(String[] values) throws NoSuchAlgorithmException {
+    	
+    	MessageDigest md = MessageDigest.getInstance("SHA-1"); 
+    	byte[] messageDigest = md.digest(values[1].getBytes()); 
+    	BigInteger no = new BigInteger(1, messageDigest); 
+    	String hashtext = no.toString(16); 
+    	while (hashtext.length() < 32) { 
+             hashtext = "0" + hashtext; 
+        } 
+    	
+    	String result = "Where login='" + values[0] + "' AND haslo='" + hashtext + "'";
     	return result;
     }
     
-    Permision login(String[] values) {
+    Permision login(String[] values) throws NoSuchAlgorithmException {
     	 Permision permision = null;
          try
          {
