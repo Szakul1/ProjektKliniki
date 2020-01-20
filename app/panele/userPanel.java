@@ -18,7 +18,7 @@ public class userPanel extends JPanel implements ActionListener
     mainFrame frame;
     JPanel panel;
 
-    public userPanel(mainFrame frame, Permision perm) 
+    public userPanel(mainFrame frame) 
     {
         this.frame = frame;
         Function fun;

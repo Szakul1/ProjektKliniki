@@ -35,12 +35,18 @@ public class employeePanel extends JPanel implements ActionListener
         fun = Function.DELETE;
         fun.setId(-1);
         panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(Box.createRigidArea(new Dimension(0,10)));
         panel.add(add);
+        add.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panel.add(Box.createRigidArea(new Dimension(0,10)));
         panel.add(give);
+        give.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(panel, BorderLayout.EAST);
 
         select = new myPanel("pracownicy",new String[]{"id","imie","nazwisko","numer_tel","data_urodzenia","pensja","zawod"},frame, fun);
         add(select, BorderLayout.CENTER);
+
     }
 
     @Override

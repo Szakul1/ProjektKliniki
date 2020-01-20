@@ -17,20 +17,23 @@ public class graficPanel extends JPanel implements ActionListener
     myPanel select;
     JButton add;
     mainFrame frame;
+    JPanel help;
 
     public graficPanel(mainFrame frame, Permision perm) 
     {
         this.frame = frame;
         Function fun;
 
+        help = new JPanel();
         setLayout(new BorderLayout());
         add = new JButton("Dodaj Grafik");
         add.addActionListener(this);
         if(perm != Permision.VET && perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
-        {   
+        {
+            help.add(add);   
             fun = Function.DELETE;
             fun.setId(-1);
-            add(new JPanel().add(add), BorderLayout.EAST);
+            add(help, BorderLayout.EAST);
         }
         else
         {
