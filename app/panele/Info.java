@@ -191,7 +191,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( btOccupation, gbcPanel0 );
 		add( btOccupation );
 		
-		tfT_name = new JLabel(data.get(0));
+		tfT_name = new JLabel(data.get(1));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 1;
 		gbcPanel0.gridwidth = 5;
@@ -203,7 +203,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_name, gbcPanel0 );
 		add( tfT_name );
 
-		tfT_surname = new JLabel(data.get(1));
+		tfT_surname = new JLabel(data.get(2));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 4;
 		gbcPanel0.gridwidth = 5;
@@ -215,7 +215,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_surname, gbcPanel0 );
 		add( tfT_surname );
 
-		tfT_phone = new JLabel(data.get(2));
+		tfT_phone = new JLabel(data.get(3));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 7;
 		gbcPanel0.gridwidth = 5;
@@ -227,7 +227,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_phone, gbcPanel0 );
 		add( tfT_phone );
 
-		tfT_birth = new JLabel(data.get(3));
+		tfT_birth = new JLabel(data.get(4));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 10;
 		gbcPanel0.gridwidth = 5;
@@ -239,7 +239,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_birth, gbcPanel0 );
 		add( tfT_birth );
 		
-		tfT_salary = new JLabel(data.get(4));
+		tfT_salary = new JLabel(data.get(5));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 13;
 		gbcPanel0.gridwidth = 5;
@@ -251,7 +251,7 @@ public class Info extends JPanel{
 		gbPanel0.setConstraints( tfT_salary, gbcPanel0 );
 		add( tfT_salary );
 		
-		tfT_occupation = new JLabel(data.get(5));
+		tfT_occupation = new JLabel(data.get(6));
 		gbcPanel0.gridx = 12;
 		gbcPanel0.gridy = 16;
 		gbcPanel0.gridwidth = 5;

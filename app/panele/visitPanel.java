@@ -26,7 +26,7 @@ public class visitPanel extends JPanel implements ActionListener
 
         setLayout(new BorderLayout());
       
-        if(perm != Permision.TECHNICIAN && perm != Permision.CLIENT)
+        if(perm != Permision.CLIENT)
         {   
             fun = Function.DELETE;
             fun.setId(-1);
