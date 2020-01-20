@@ -58,7 +58,13 @@ public class login extends JFrame implements ActionListener
         {
         	//sprawdz czy puste
         	String[] logs = {loginField.getText(), String.copyValueOf(passwordField.getPassword())};
-        	Permision perm = dataBase.login(logs);
+        	Permision perm = null;
+            try {
+				perm = dataBase.login(logs);
+			} catch (NoSuchAlgorithmException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
         	if(perm == null) {
         		 JOptionPane.showMessageDialog(this,
                	        "Niepoprawny login lub haslo");
