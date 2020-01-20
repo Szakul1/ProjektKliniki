@@ -35,9 +35,9 @@ public class mainFrame extends JFrame
         cards = new JTabbedPane();
         addCards(this.perm);
 
-        setLayout(new BorderLayout());
-        add(cards, BorderLayout.NORTH);
+        add(cards);
         pack();
+        setSize(this.getWidth(),200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -65,7 +65,7 @@ public class mainFrame extends JFrame
                 cards.addTab(vaccinations, new vaccinationsPanel(this, permissions));
 
             case CLIENT:
-            	cards.addTab(services, new servicePanel(this, permissions));
+                cards.addTab(services, new servicePanel(this, permissions));
                 cards.addTab(visits, new visitPanel(this, permissions));
                 cards.addTab(animals, new petPanel(this, permissions));
                 cards.addTab(grafic, new graficPanel(this,permissions));
@@ -79,6 +79,8 @@ public class mainFrame extends JFrame
         }
     }
     public static void main(String[] args) {
-        new mainFrame(Permision.ADMIN);
+        Permision p = Permision.TECHNICIAN;
+        p.setId(4);
+        new mainFrame(p);
     }
 }

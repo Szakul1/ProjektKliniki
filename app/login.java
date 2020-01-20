@@ -3,15 +3,15 @@ package app;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.security.NoSuchAlgorithmException;
 
-public class login extends JFrame implements ActionListener
-{
+public class login extends JFrame implements ActionListener {
 
     /**
      *
      */
     private static final long serialVersionUID = 1L;
-    
+
     DataBaseConnection dataBase;
     JLabel login;
     JLabel password;
@@ -19,8 +19,8 @@ public class login extends JFrame implements ActionListener
     JPasswordField passwordField;
     JButton loginButton;
     JPanel help;
-    public login()
-    {
+
+    public login() {
         dataBase = new DataBaseConnection();
         login = new JLabel("Login: ");
         password = new JLabel("Haslo: ");
@@ -28,23 +28,23 @@ public class login extends JFrame implements ActionListener
         passwordField = new JPasswordField(20);
         loginButton = new JButton("Login");
         loginButton.addActionListener(this);
-        
+
         addPanel(login, loginField);
         addPanel(password, passwordField);
-        
+
         help = new JPanel();
         help.setLayout(new FlowLayout(FlowLayout.CENTER));
         help.add(loginButton);
         add(help);
-        
+
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setLocationRelativeTo(null);
     }
-    private void addPanel(Component comp1, Component comp2)
-    {
+
+    private void addPanel(Component comp1, Component comp2) {
         help = new JPanel();
         help.setLayout(new FlowLayout(FlowLayout.CENTER));
         help.add(comp1);
@@ -52,27 +52,25 @@ public class login extends JFrame implements ActionListener
         add(help);
     }
 
-    public void actionPerformed(ActionEvent e)
-    {
-        if(e.getActionCommand().equals("Login"))
-        {
-        	//sprawdz czy puste
-        	String[] logs = {loginField.getText(), String.copyValueOf(passwordField.getPassword())};
-        	Permision perm = null;
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("Login")) {
+            // sprawdz czy puste
+            String[] logs = { loginField.getText(), String.copyValueOf(passwordField.getPassword()) };
+            Permision perm;
             try {
-				perm = dataBase.login(logs);
-			} catch (NoSuchAlgorithmException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-        	if(perm == null) {
-        		 JOptionPane.showMessageDialog(this,
-               	        "Niepoprawny login lub haslo");
-        	}
-        	else {
-        		new mainFrame(perm);
-        		setVisible(false);
-        	}
+                perm = dataBase.login(logs);
+                if(perm == null) {
+                     JOptionPane.showMessageDialog(this,
+                               "Niepoprawny login lub haslo");
+                }
+                else {
+                    new mainFrame(perm);
+                    setVisible(false);
+                }
+            } catch (NoSuchAlgorithmException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
             //uprawnienia i id
         	//new mainFrame(loginField.getText());
         }

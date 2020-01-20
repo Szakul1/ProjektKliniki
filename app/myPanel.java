@@ -18,7 +18,9 @@ public class myPanel extends JPanel implements ActionListener
     JLabel chooseColumn;
     JLabel writeCondition;
     String[] names;
-    List<JPanel> help;
+    JPanel help1;
+    JPanel help2;
+    JPanel help3;
     List<JComboBox<String>> columns;
     List<JTextField> condition;
     List<JButton> remove;
@@ -49,22 +51,30 @@ public class myPanel extends JPanel implements ActionListener
         this.table=table;
         this.names = names;
         this.frame= frame;
-        help = new ArrayList<>();
         columns = new ArrayList<>();
         condition = new ArrayList<>();
         remove = new ArrayList<>();
-        chooseColumn = new JLabel("Kolumna                       ");
-        writeCondition = new JLabel("Warunek");
+        chooseColumn = new JLabel("Kolumna",JLabel.CENTER);
+        writeCondition = new JLabel("Warunek",JLabel.CENTER);
         select = new JButton("Wyszukaj");
         select.addActionListener(this);
         
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        help.add(new JPanel());
-        help.get(0).setLayout(new FlowLayout(FlowLayout.LEFT));
-        help.get(0).add(chooseColumn);
-        help.get(0).add(writeCondition);
-        help.get(0).add(select);
-        add(help.get(0));
+        setLayout(new FlowLayout(FlowLayout.CENTER));
+        help1 = new JPanel();
+        help1.setLayout(new BoxLayout(help1, BoxLayout.Y_AXIS));
+        help1.add(chooseColumn);
+        chooseColumn.setAlignmentX(Component.CENTER_ALIGNMENT);
+        help2 = new JPanel();
+        help2.setLayout(new BoxLayout(help2, BoxLayout.Y_AXIS));
+        help2.add(writeCondition);
+        writeCondition.setAlignmentX(Component.CENTER_ALIGNMENT);
+        help3 = new JPanel();
+        help3.setLayout(new BoxLayout(help3, BoxLayout.Y_AXIS));
+        help3.add(select);
+        select.setAlignmentX(Component.CENTER_ALIGNMENT);
+        add(help1);
+        add(help2);
+        add(help3);
 
         addCondition();
     }
@@ -81,12 +91,19 @@ public class myPanel extends JPanel implements ActionListener
         condition.add(new JTextField(20));
         remove.add(new JButton("X"));
         remove.get(remove.size()-1).addActionListener(this);;
-        help.add(new JPanel());
-        help.get(help.size()-1).setLayout(new FlowLayout());
-        help.get(help.size()-1).add(columns.get(columns.size()-1));
-        help.get(help.size()-1).add(condition.get(condition.size()-1));
-        help.get(help.size()-1).add(remove.get(remove.size()-1));
-        add(help.get(help.size()-1));
+
+        help1.add(Box.createVerticalStrut(10));
+        help1.add(columns.get(columns.size()-1));
+        columns.get(columns.size()-1).setAlignmentX(Component.CENTER_ALIGNMENT);
+        help2.add(Box.createVerticalStrut(15));
+        help2.add(condition.get(condition.size()-1));
+        condition.get(condition.size()-1).setAlignmentX(Component.CENTER_ALIGNMENT);
+        if(remove.size()==1)
+            help3.add(Box.createVerticalStrut(1));
+        else
+            help3.add(Box.createVerticalStrut(8));
+        help3.add(remove.get(remove.size()-1));
+        remove.get(remove.size()-1).setAlignmentX(Component.CENTER_ALIGNMENT);
     }
 
     @Override
@@ -98,8 +115,9 @@ public class myPanel extends JPanel implements ActionListener
             {
                 if(e.getSource().equals(remove.get(i)))
                 {
-                    remove(help.get(i+1));
-                    help.remove(i+1);
+                    help1.remove(i+1);
+                    help2.remove(i+1);
+                    help3.remove(i+1);
                     condition.remove(i);
                     columns.remove(i);
                     remove.remove(i);
