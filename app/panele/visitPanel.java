@@ -47,7 +47,8 @@ public class visitPanel extends JPanel implements ActionListener
             add(panel,BorderLayout.EAST);
         }
         else {
-        	fun = null;
+            fun = Function.DELETE;
+        	fun.setId(perm.getId());
         }
         select = new myPanel("wizyty",new String[]{"id_pracownika","id_zwierzecia","termin","cel_wizyty"},frame, fun);
         add(select, BorderLayout.CENTER);
