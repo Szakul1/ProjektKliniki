@@ -55,17 +55,20 @@ public class DataBaseConnection {
         		testquery = "Select imie,nazwisko,numer_tel From " + table + " WHERE id=" + id;
         	}
         	else {
-        		testquery = "Select imie,nazwisko,numer_tel,data_urodzenia,pensja,zawod From " + table + " WHERE id=" + id;
+                testquery = "Select imie,nazwisko,numer_tel,data_urodzenia,pensja,zawod From " + table + " WHERE id=" + id;
         	}
-        	ResultSet res = stmt.executeQuery(testquery);
-        	results.add(res.getString("imie"));
-        	results.add(res.getString("nazwisko"));
-        	results.add(res.getString("numer_tel"));
-        	if(table.equals("pracownicy")) {
-        		results.add(res.getString("data_urodzenia"));
-        		results.add(res.getString("pensja"));
-        		results.add(res.getString("zawod"));
-        	}
+            ResultSet res = stmt.executeQuery(testquery);
+            if(res.next())
+            {
+                results.add(res.getString("imie"));
+                results.add(res.getString("nazwisko"));
+                results.add(res.getString("numer_tel"));
+                if(table.equals("pracownicy")) {
+                    results.add(res.getString("data_urodzenia"));
+                    results.add(res.getString("pensja"));
+                    results.add(res.getString("zawod"));
+                }
+            }
         }
         catch(SQLException ex)
         {
