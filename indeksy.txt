@@ -1,0 +1,4 @@
+CREATE UNIQUE INDEX LOGIN ON uzytkownicy(login,haslo)
+CREATE INDEX SERVICES ON uslugi(nazwa,cena,zawod)
+CREATE INDEX GRAFIC ON grafik(id_pracownika,dzien,rozpoczecie,zakonczenie)
+CREATE INDEX CLIENTS ON klienci(id,imie,nazwisko,numer_tel)

@@ -1,0 +1,3002 @@
+[
+    {
+        "id_pracownika": 0,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 0,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 0,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 0,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 0,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 1,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 1,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 1,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 1,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 1,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 2,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 2,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 2,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 2,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 2,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 3,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 3,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 3,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 3,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 3,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 4,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 4,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 4,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 4,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 4,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 5,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 5,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 5,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 5,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 5,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 6,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 6,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 6,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 6,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 6,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 7,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 7,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 7,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 7,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 7,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 8,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 8,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 8,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 8,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 8,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 9,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 9,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 9,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 9,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 9,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 10,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 10,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 10,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 10,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 10,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 11,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 11,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 11,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 11,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 11,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 12,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 12,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 12,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 12,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 12,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 13,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 13,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 13,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 13,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 13,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 14,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 14,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 14,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 14,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 14,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 15,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 15,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 15,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 15,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 15,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 16,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 16,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 16,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 16,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 16,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 17,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 17,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 17,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 17,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 17,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 18,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 18,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 18,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 18,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 18,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 19,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 19,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 19,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 19,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 19,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 20,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 20,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 20,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 20,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 20,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 21,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 21,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 21,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 21,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 21,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 22,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 22,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 22,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 22,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 22,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 23,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 23,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 23,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 23,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 23,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 24,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 24,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 24,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 24,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 24,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 25,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 25,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 25,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 25,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 25,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 26,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 26,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 26,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 26,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 26,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 27,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 27,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 27,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 27,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 27,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 28,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 28,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 28,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 28,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 28,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 29,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 29,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 29,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 29,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 29,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 30,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 30,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 30,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 30,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 30,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 31,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 31,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 31,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 31,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 31,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 32,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 32,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 32,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 32,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 32,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 33,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 33,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 33,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 33,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 33,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 34,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 34,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 34,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 34,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 34,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 35,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 35,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 35,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 35,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 35,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 36,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 36,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 36,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 36,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 36,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 37,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 37,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 37,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 37,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 37,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 38,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 38,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 38,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 38,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 38,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 39,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 39,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 39,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 39,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 39,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 40,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 40,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 40,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 40,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 40,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 41,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 41,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 41,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 41,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 41,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 42,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 42,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 42,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 42,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 42,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 43,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 43,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 43,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 43,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 43,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 44,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 44,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 44,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 44,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 44,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 45,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 45,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 45,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 45,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 45,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 46,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 46,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 46,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 46,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 46,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 47,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 47,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 47,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 47,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 47,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 48,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 48,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 48,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 48,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 48,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 49,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 49,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 49,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 49,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 49,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 50,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 50,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 50,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 50,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 50,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 51,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 51,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 51,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 51,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 51,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 52,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 52,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 52,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 52,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 52,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 53,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 53,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 53,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 53,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 53,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 54,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 54,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 54,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 54,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 54,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 55,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 55,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 55,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 55,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 55,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 56,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 56,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 56,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 56,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 56,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 57,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 57,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 57,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 57,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 57,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 58,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 58,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 58,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 58,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 58,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 59,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 59,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 59,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 59,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 59,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 60,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 60,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 60,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 60,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 60,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 61,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 61,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 61,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 61,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 61,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 62,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 62,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 62,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 62,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 62,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 63,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 63,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 63,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 63,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 63,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 64,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 64,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 64,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 64,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 64,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 65,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 65,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 65,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 65,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 65,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 66,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 66,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 66,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 66,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 66,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 67,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 67,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 67,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 67,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 67,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 68,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 68,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 68,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 68,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 68,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 69,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 69,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 69,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 69,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 69,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 70,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 70,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 70,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 70,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 70,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 71,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 71,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 71,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 71,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 71,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 72,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 72,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 72,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 72,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 72,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 73,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 73,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 73,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 73,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 73,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 74,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 74,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 74,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 74,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 74,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 75,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 75,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 75,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 75,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 75,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 76,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 76,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 76,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 76,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 76,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 77,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 77,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 77,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 77,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 77,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 78,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 78,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 78,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 78,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 78,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 79,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 79,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 79,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 79,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 79,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 80,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 80,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 80,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 80,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 80,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 81,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 81,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 81,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 81,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 81,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 82,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 82,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 82,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 82,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 82,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 83,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 83,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 83,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 83,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 83,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 84,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 84,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 84,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 84,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 84,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 85,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 85,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 85,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 85,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 85,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 86,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 86,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 86,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 86,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 86,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 87,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 87,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 87,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 87,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 87,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 88,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 88,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 88,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 88,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 88,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 89,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 89,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 89,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 89,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 89,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 90,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 90,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 90,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 90,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 90,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 91,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 91,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 91,
+        "dzien": "sroda",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 91,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 91,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 92,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 92,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 92,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 92,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 92,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 93,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 93,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 93,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 93,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 93,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 94,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 94,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 94,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 94,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 94,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 95,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 95,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 95,
+        "dzien": "sroda",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 95,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 95,
+        "dzien": "piatek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 96,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 96,
+        "dzien": "wtorek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 96,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 96,
+        "dzien": "czwartek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 96,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 97,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 97,
+        "dzien": "wtorek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 97,
+        "dzien": "sroda",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 97,
+        "dzien": "czwartek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 97,
+        "dzien": "piatek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 98,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 98,
+        "dzien": "wtorek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 98,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 98,
+        "dzien": "czwartek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 98,
+        "dzien": "piatek",
+        "rozpoczecie": 9,
+        "zakonczenie": 16
+    },
+    {
+        "id_pracownika": 99,
+        "dzien": "poniedzialek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 99,
+        "dzien": "wtorek",
+        "rozpoczecie": 8,
+        "zakonczenie": 15
+    },
+    {
+        "id_pracownika": 99,
+        "dzien": "sroda",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    },
+    {
+        "id_pracownika": 99,
+        "dzien": "czwartek",
+        "rozpoczecie": 7,
+        "zakonczenie": 14
+    },
+    {
+        "id_pracownika": 99,
+        "dzien": "piatek",
+        "rozpoczecie": 10,
+        "zakonczenie": 17
+    }
+]
